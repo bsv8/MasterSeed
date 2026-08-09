@@ -1,5 +1,5 @@
 {
-  "name": "@keymaster/masterseed",
+  "name": "masterseed",
   "version": "1.0.0",
   "description": "Keymaster Seed V1 SDK",
   "license": "MIT",

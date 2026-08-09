@@ -28,7 +28,7 @@ actual, err := masterseed.VerifyBlock(ctx, blockBytes, expected)
 
 ## TypeScript
 
-`@keymaster/masterseed` 不依赖 Node `Buffer`，核心输入是
+`masterseed` 不依赖 Node `Buffer`，核心输入是
 `AsyncIterable<Uint8Array>`，输出 sink 的 `write` 必须在完整写入后 resolve。
 所有大小、块编号和偏移都是 `bigint`。
 
@@ -42,7 +42,7 @@ const blockHash = await readBlockHash(randomSeed, seedSize, blockIndex, signal);
 const actual = verifyBlock(blockBytes, expected, signal);
 ```
 
-Node 文件适配器从 `@keymaster/masterseed/node` 导入。`AbortSignal` 取消和
+Node 文件适配器从 `masterseed/node` 导入。`AbortSignal` 取消和
 所有失败都抛出 `MasterSeedError`，通过 `error.code` 判断稳定错误码。
 
 错误码与设计文档一致：
@@ -52,4 +52,3 @@ Node 文件适配器从 `@keymaster/masterseed/node` 导入。`AbortSignal` 取�
 `BLOCK_INDEX_OUT_OF_RANGE`、`INTEGER_OVERFLOW`、`TARGET_EXISTS`、
 `READ_FAILED`、`WRITE_FAILED` 和 `ABORTED`。`INVALID_ARGUMENT` 用于路径和
 公开参数的即时校验。
-

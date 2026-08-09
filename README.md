@@ -22,7 +22,7 @@ seed_hash  = SHA256(seed_bytes)
 
 - 根目录 Go module：包名 `masterseed`；
 - `typescript/`：运行时无关的核心 package；
-- `@keymaster/masterseed/node`：Node.js 文件路径适配层；
+- `masterseed/node`：Node.js 文件路径适配层；
 - `spec/seed-v1.md` 与 `testdata/v1/vectors.json`：公开格式和跨语言黄金向量。
 
 ## Go 最小示例
@@ -61,8 +61,8 @@ _, err = masterseed.VerifySourceFile(context.Background(), "source.bin", "source
 核心 API 接收任意 `Uint8Array` 异步 chunk；计数、大小和偏移使用 `bigint`。
 
 ```ts
-import { createSeed, Digest } from "@keymaster/masterseed";
-import { createSeedFile, verifySourceFile } from "@keymaster/masterseed/node";
+import { createSeed, Digest } from "masterseed";
+import { createSeedFile, verifySourceFile } from "masterseed/node";
 
 const info = await createSeed(
   (async function* () { yield new TextEncoder().encode("abc"); })(),
