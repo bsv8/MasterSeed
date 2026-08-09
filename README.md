@@ -35,7 +35,7 @@ package main
 import (
     "context"
     "fmt"
-    "github.com/keymaster/masterseed"
+    "github.com/bsv8/MasterSeed"
 )
 
 func main() {

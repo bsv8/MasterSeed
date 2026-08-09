@@ -7,7 +7,7 @@
 
 ## Go
 
-根 module 是 `github.com/keymaster/masterseed`。核心流 API 使用
+根 module 是 `github.com/bsv8/MasterSeed`。核心流 API 使用
 `context.Context`、`io.Reader` 和 `io.Writer`；摘要使用固定长度的 `Digest`
 值类型。`SeedInfo.SourceSizeKnown` 为 `false` 时，表示源文件长度不能从
 种子文件推断。
