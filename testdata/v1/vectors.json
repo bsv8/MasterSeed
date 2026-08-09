@@ -1,0 +1,111 @@
+{
+  "schema": "keymaster-seed-test-v1",
+  "format": "keymaster-seed-v1",
+  "block_size": 524288,
+  "digest_size": 32,
+  "hash_algorithm": "SHA-256",
+  "vectors": [
+    {
+      "name": "empty",
+      "source": { "kind": "empty" },
+      "source_size": 0,
+      "block_count": 0,
+      "block_hashes_hex": [],
+      "seed_size": 0,
+      "seed_bytes_hex": "",
+      "seed_hash_hex": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "abc",
+      "source": { "kind": "hex", "value": "616263" },
+      "source_size": 3,
+      "block_count": 1,
+      "block_hashes_hex": ["ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"],
+      "seed_size": 32,
+      "seed_bytes_hex": "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad",
+      "seed_hash_hex": "4f8b42c22dd3729b519ba6f68d2da7cc5b2d606d05daed5ad5128cc03e6c6358"
+    },
+    {
+      "name": "zero-512k",
+      "source": { "kind": "repeat", "byte": "00", "size": 524288 },
+      "source_size": 524288,
+      "block_count": 1,
+      "block_hashes_hex": ["07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541"],
+      "seed_size": 32,
+      "seed_bytes_hex": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
+      "seed_hash_hex": "dd0c9a9888ecf7fba4d607be64fa7003a628ed8980ac9f08d76d6a0da17e0dc2"
+    },
+    {
+      "name": "ramp-524287",
+      "source": { "kind": "ramp8", "size": 524287 },
+      "source_size": 524287,
+      "block_count": 1,
+      "block_hashes_hex": ["99a007b8beb5603b0e24f432da089a49f49cd31aab5763fa6374c4ebf7acdbf6"],
+      "seed_size": 32,
+      "seed_bytes_hex": "99a007b8beb5603b0e24f432da089a49f49cd31aab5763fa6374c4ebf7acdbf6",
+      "seed_hash_hex": "c1f7b39254a96d02e8d2386b5bff0dc29e7836475912845a5ceb93dde8c0aa47"
+    },
+    {
+      "name": "ramp-524288",
+      "source": { "kind": "ramp8", "size": 524288 },
+      "source_size": 524288,
+      "block_count": 1,
+      "block_hashes_hex": ["33bc8aab40703678c3ebe94d2dd8f2afff285dd901f9234e841e4679f8204fd5"],
+      "seed_size": 32,
+      "seed_bytes_hex": "33bc8aab40703678c3ebe94d2dd8f2afff285dd901f9234e841e4679f8204fd5",
+      "seed_hash_hex": "0399f29bc6da84200ea40124e409191773afa4a95534f2f626b08cca59612768"
+    },
+    {
+      "name": "ramp-524289",
+      "source": { "kind": "ramp8", "size": 524289 },
+      "source_size": 524289,
+      "block_count": 2,
+      "block_hashes_hex": [
+        "33bc8aab40703678c3ebe94d2dd8f2afff285dd901f9234e841e4679f8204fd5",
+        "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+      ],
+      "seed_size": 64,
+      "seed_bytes_hex": "33bc8aab40703678c3ebe94d2dd8f2afff285dd901f9234e841e4679f8204fd56e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+      "seed_hash_hex": "92087446f43992f294b86050598fc613fc701d4f3002ee182963d408e73ebd17"
+    },
+    {
+      "name": "two-identical-blocks",
+      "source": { "kind": "repeat", "byte": "00", "size": 1048576 },
+      "source_size": 1048576,
+      "block_count": 2,
+      "block_hashes_hex": [
+        "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
+        "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541"
+      ],
+      "seed_size": 64,
+      "seed_bytes_hex": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda154107854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
+      "seed_hash_hex": "9d72263be23b27f11beee57e490a95feb7a710094fb85d3ef5656b8514bf8076"
+    },
+    {
+      "name": "two-blocks-ab",
+      "source": { "kind": "segments", "segments": [{ "byte": "41", "size": 524288 }, { "byte": "42", "size": 524288 }] },
+      "source_size": 1048576,
+      "block_count": 2,
+      "block_hashes_hex": [
+        "5f7a26e1d78cd171b1aab0208da133e996c75285b94aa8ef06c6578ea0b26903",
+        "55854a6b13148e4237a428566701ec6655e85b94bc36395a1d02c7e9f9cceacf"
+      ],
+      "seed_size": 64,
+      "seed_bytes_hex": "5f7a26e1d78cd171b1aab0208da133e996c75285b94aa8ef06c6578ea0b2690355854a6b13148e4237a428566701ec6655e85b94bc36395a1d02c7e9f9cceacf",
+      "seed_hash_hex": "cbbd1d9627a48965f03ae1cf364f7914f325a0e5c3705d8a942278e565d9c87e"
+    },
+    {
+      "name": "two-blocks-ba",
+      "source": { "kind": "segments", "segments": [{ "byte": "42", "size": 524288 }, { "byte": "41", "size": 524288 }] },
+      "source_size": 1048576,
+      "block_count": 2,
+      "block_hashes_hex": [
+        "55854a6b13148e4237a428566701ec6655e85b94bc36395a1d02c7e9f9cceacf",
+        "5f7a26e1d78cd171b1aab0208da133e996c75285b94aa8ef06c6578ea0b26903"
+      ],
+      "seed_size": 64,
+      "seed_bytes_hex": "55854a6b13148e4237a428566701ec6655e85b94bc36395a1d02c7e9f9cceacf5f7a26e1d78cd171b1aab0208da133e996c75285b94aa8ef06c6578ea0b26903",
+      "seed_hash_hex": "7178e26f41fbfa27abe5d08fe0502a513cca551bbb053297dde1670ace55f3cd"
+    }
+  ]
+}
