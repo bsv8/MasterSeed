@@ -4,7 +4,7 @@ This is the public, byte-level format specification for `keymaster-seed-v1`.
 
 ## Constants
 
-- `BLOCK_SIZE = 524288` bytes (`512 KiB`, not `512000` bytes)
+- `BLOCK_SIZE = 262144` bytes (`256 KiB`, not `256000` bytes)
 - `DIGEST_SIZE = 32` bytes
 - hash algorithm: SHA-256
 
@@ -34,4 +34,3 @@ integrity identifier, not a publisher signature.
 The V1 format does not encode source length, source name, block size, hash
 algorithm, or version. The surrounding protocol must identify the format as
 `keymaster-seed-v1`.
-

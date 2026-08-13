@@ -1,7 +1,7 @@
 {
   "schema": "keymaster-seed-test-v1",
   "format": "keymaster-seed-v1",
-  "block_size": 524288,
+  "block_size": 262144,
   "digest_size": 32,
   "hash_algorithm": "SHA-256",
   "vectors": [
@@ -26,86 +26,86 @@
       "seed_hash_hex": "4f8b42c22dd3729b519ba6f68d2da7cc5b2d606d05daed5ad5128cc03e6c6358"
     },
     {
-      "name": "zero-512k",
-      "source": { "kind": "repeat", "byte": "00", "size": 524288 },
-      "source_size": 524288,
+      "name": "zero-256k",
+      "source": { "kind": "repeat", "byte": "00", "size": 262144 },
+      "source_size": 262144,
       "block_count": 1,
-      "block_hashes_hex": ["07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541"],
+      "block_hashes_hex": ["8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"],
       "seed_size": 32,
-      "seed_bytes_hex": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
-      "seed_hash_hex": "dd0c9a9888ecf7fba4d607be64fa7003a628ed8980ac9f08d76d6a0da17e0dc2"
+      "seed_bytes_hex": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+      "seed_hash_hex": "c67554c8836dd666772ca9eeccc27bde97704632fd4ca9bb898d775216cc18cf"
     },
     {
-      "name": "ramp-524287",
-      "source": { "kind": "ramp8", "size": 524287 },
-      "source_size": 524287,
+      "name": "ramp-262143",
+      "source": { "kind": "ramp8", "size": 262143 },
+      "source_size": 262143,
       "block_count": 1,
-      "block_hashes_hex": ["99a007b8beb5603b0e24f432da089a49f49cd31aab5763fa6374c4ebf7acdbf6"],
+      "block_hashes_hex": ["22fc3b1dfd9ba3690ed231d5a30a3adffb16e966164896534017e976868e7902"],
       "seed_size": 32,
-      "seed_bytes_hex": "99a007b8beb5603b0e24f432da089a49f49cd31aab5763fa6374c4ebf7acdbf6",
-      "seed_hash_hex": "c1f7b39254a96d02e8d2386b5bff0dc29e7836475912845a5ceb93dde8c0aa47"
+      "seed_bytes_hex": "22fc3b1dfd9ba3690ed231d5a30a3adffb16e966164896534017e976868e7902",
+      "seed_hash_hex": "14dd55377b6c7bad8e2267169859b2365ccb8a61b6dcb7c54cf76e6a4caa9840"
     },
     {
-      "name": "ramp-524288",
-      "source": { "kind": "ramp8", "size": 524288 },
-      "source_size": 524288,
+      "name": "ramp-262144",
+      "source": { "kind": "ramp8", "size": 262144 },
+      "source_size": 262144,
       "block_count": 1,
-      "block_hashes_hex": ["33bc8aab40703678c3ebe94d2dd8f2afff285dd901f9234e841e4679f8204fd5"],
+      "block_hashes_hex": ["2312394bd99545d9de131c24efb781e765ac1aec243f2ed9347597a793a415e9"],
       "seed_size": 32,
-      "seed_bytes_hex": "33bc8aab40703678c3ebe94d2dd8f2afff285dd901f9234e841e4679f8204fd5",
-      "seed_hash_hex": "0399f29bc6da84200ea40124e409191773afa4a95534f2f626b08cca59612768"
+      "seed_bytes_hex": "2312394bd99545d9de131c24efb781e765ac1aec243f2ed9347597a793a415e9",
+      "seed_hash_hex": "cf9f4a9620cd1ec85660ff447709dadf7228f9540f8cddaf0dfaca88d21e523f"
     },
     {
-      "name": "ramp-524289",
-      "source": { "kind": "ramp8", "size": 524289 },
-      "source_size": 524289,
+      "name": "ramp-262145",
+      "source": { "kind": "ramp8", "size": 262145 },
+      "source_size": 262145,
       "block_count": 2,
       "block_hashes_hex": [
-        "33bc8aab40703678c3ebe94d2dd8f2afff285dd901f9234e841e4679f8204fd5",
+        "2312394bd99545d9de131c24efb781e765ac1aec243f2ed9347597a793a415e9",
         "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
       ],
       "seed_size": 64,
-      "seed_bytes_hex": "33bc8aab40703678c3ebe94d2dd8f2afff285dd901f9234e841e4679f8204fd56e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
-      "seed_hash_hex": "92087446f43992f294b86050598fc613fc701d4f3002ee182963d408e73ebd17"
+      "seed_bytes_hex": "2312394bd99545d9de131c24efb781e765ac1aec243f2ed9347597a793a415e96e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+      "seed_hash_hex": "a33b6eb529c11438e3f01042a53d14e0cc93d571993e20a42a4c092f1aff64bd"
     },
     {
       "name": "two-identical-blocks",
-      "source": { "kind": "repeat", "byte": "00", "size": 1048576 },
-      "source_size": 1048576,
+      "source": { "kind": "repeat", "byte": "00", "size": 524288 },
+      "source_size": 524288,
       "block_count": 2,
       "block_hashes_hex": [
-        "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
-        "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541"
+        "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+        "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90"
       ],
       "seed_size": 64,
-      "seed_bytes_hex": "07854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda154107854d2fef297a06ba81685e660c332de36d5d18d546927d30daad6d7fda1541",
-      "seed_hash_hex": "9d72263be23b27f11beee57e490a95feb7a710094fb85d3ef5656b8514bf8076"
+      "seed_bytes_hex": "8a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a908a39d2abd3999ab73c34db2476849cddf303ce389b35826850f9a700589b4a90",
+      "seed_hash_hex": "0cc19dd4ac4cfb8e93499a43e86e4310545f0cf73e957823834be190cda7835e"
     },
     {
       "name": "two-blocks-ab",
-      "source": { "kind": "segments", "segments": [{ "byte": "41", "size": 524288 }, { "byte": "42", "size": 524288 }] },
-      "source_size": 1048576,
+      "source": { "kind": "segments", "segments": [{ "byte": "41", "size": 262144 }, { "byte": "42", "size": 262144 }] },
+      "source_size": 524288,
       "block_count": 2,
       "block_hashes_hex": [
-        "5f7a26e1d78cd171b1aab0208da133e996c75285b94aa8ef06c6578ea0b26903",
-        "55854a6b13148e4237a428566701ec6655e85b94bc36395a1d02c7e9f9cceacf"
+        "97a2fc5541dcc9c06b99b2a84c34961fa0c3af20dba3968df2f96a56c6bc00c9",
+        "4b0d375a615c0382b4f958b48e43e7f356b4fcac76e20423294adc07b8d4976e"
       ],
       "seed_size": 64,
-      "seed_bytes_hex": "5f7a26e1d78cd171b1aab0208da133e996c75285b94aa8ef06c6578ea0b2690355854a6b13148e4237a428566701ec6655e85b94bc36395a1d02c7e9f9cceacf",
-      "seed_hash_hex": "cbbd1d9627a48965f03ae1cf364f7914f325a0e5c3705d8a942278e565d9c87e"
+      "seed_bytes_hex": "97a2fc5541dcc9c06b99b2a84c34961fa0c3af20dba3968df2f96a56c6bc00c94b0d375a615c0382b4f958b48e43e7f356b4fcac76e20423294adc07b8d4976e",
+      "seed_hash_hex": "28fc79ce5763c7e61f4110cbd2a22fc5d41153400310a5011d5dc3135c04c9e9"
     },
     {
       "name": "two-blocks-ba",
-      "source": { "kind": "segments", "segments": [{ "byte": "42", "size": 524288 }, { "byte": "41", "size": 524288 }] },
-      "source_size": 1048576,
+      "source": { "kind": "segments", "segments": [{ "byte": "42", "size": 262144 }, { "byte": "41", "size": 262144 }] },
+      "source_size": 524288,
       "block_count": 2,
       "block_hashes_hex": [
-        "55854a6b13148e4237a428566701ec6655e85b94bc36395a1d02c7e9f9cceacf",
-        "5f7a26e1d78cd171b1aab0208da133e996c75285b94aa8ef06c6578ea0b26903"
+        "4b0d375a615c0382b4f958b48e43e7f356b4fcac76e20423294adc07b8d4976e",
+        "97a2fc5541dcc9c06b99b2a84c34961fa0c3af20dba3968df2f96a56c6bc00c9"
       ],
       "seed_size": 64,
-      "seed_bytes_hex": "55854a6b13148e4237a428566701ec6655e85b94bc36395a1d02c7e9f9cceacf5f7a26e1d78cd171b1aab0208da133e996c75285b94aa8ef06c6578ea0b26903",
-      "seed_hash_hex": "7178e26f41fbfa27abe5d08fe0502a513cca551bbb053297dde1670ace55f3cd"
+      "seed_bytes_hex": "4b0d375a615c0382b4f958b48e43e7f356b4fcac76e20423294adc07b8d4976e97a2fc5541dcc9c06b99b2a84c34961fa0c3af20dba3968df2f96a56c6bc00c9",
+      "seed_hash_hex": "8475c74e42dbe750498cf410b84319a2d170d361fa2515748d3fea260db673f6"
     }
   ]
 }

@@ -103,7 +103,7 @@ describe("shared V1 vectors", () => {
       const source = recipeBytes(vector.source);
       assert.equal(source.byteLength, vector.source_size);
       const sink = new MemorySink();
-      const info = await createSeed(chunksWithSizes(source, [1, 8191, 524289, 3]), sink);
+      const info = await createSeed(chunksWithSizes(source, [1, 8191, 262145, 3]), sink);
       const expectedSeed = bytesFromHex(vector.seed_bytes_hex);
       assert.deepEqual(sink.bytes(), expectedSeed);
       assert.equal(info.blockCount, BigInt(vector.block_count));

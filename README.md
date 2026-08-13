@@ -2,7 +2,7 @@
 
 MasterSeed 是 Keymaster Seed V1 的 Go 与 TypeScript SDK 项目。
 
-源文件固定按 512 KiB（524288 字节）分块。每个数据块计算 SHA-256，所得 **32 字节原始二进制摘要**按块顺序直接拼接，形成种子文件：
+源文件固定按 256 KiB（262144 字节）分块。每个数据块计算 SHA-256，所得 **32 字节原始二进制摘要**按块顺序直接拼接，形成种子文件：
 
 ```text
 seed_bytes = block_hash[0] || ... || block_hash[n-1]

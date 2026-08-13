@@ -9,7 +9,7 @@ import (
 // V1 constants are part of the wire format and must not change within V1.
 const (
 	Format        = "keymaster-seed-v1"
-	BlockSize     = 512 * 1024
+	BlockSize     = 256 * 1024
 	DigestSize    = 32
 	HashAlgorithm = "SHA-256"
 	// Upper-case aliases mirror the protocol notation used in the public spec.

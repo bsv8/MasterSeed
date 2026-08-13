@@ -3,8 +3,8 @@ import { ERROR_CODES, invalidArgument, isMasterSeedError, MasterSeedError, readE
 import { Sha256 } from "./sha256.js";
 
 export const FORMAT = "keymaster-seed-v1" as const;
-export const BLOCK_SIZE = 524288;
-export const BLOCK_SIZE_BIGINT = 524288n;
+export const BLOCK_SIZE = 262144;
+export const BLOCK_SIZE_BIGINT = 262144n;
 export const HASH_ALGORITHM = "SHA-256" as const;
 
 export type ByteSource = AsyncIterable<Uint8Array> | Iterable<Uint8Array>;
