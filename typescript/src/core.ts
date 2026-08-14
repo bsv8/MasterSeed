@@ -32,6 +32,24 @@ export interface RandomAccessSeed {
   readAt(offset: bigint, length: number): Promise<Uint8Array>;
 }
 
+export interface BlockMatches extends SeedInfo {
+  readonly matchCount: bigint;
+  readonly firstIndex: bigint;
+  readonly lastIndex: bigint;
+}
+
+export interface VerifiedBlock extends SeedInfo {
+  readonly blockHash: Digest;
+  readonly blockIndex: bigint;
+  readonly blockSize: bigint;
+}
+
+const UINT64_MAX = (1n << 64n) - 1n;
+
+function ensureUint64(value: bigint, name: string): void {
+  if (typeof value !== "bigint" || value < 0n || value > UINT64_MAX) throw invalidArgument(`${name} must be an unsigned 64-bit integer`);
+}
+
 function makeInfo(blockCount: bigint, sourceSize: bigint, sourceSizeKnown: boolean, seedSize: bigint, seedHash: Digest): SeedInfo {
   return {
     format: FORMAT,
@@ -229,6 +247,124 @@ export async function verifySeed(seed: ByteSource, expected: Digest, signal?: Ab
   return info;
 }
 
+class SeedScan {
+  readonly reader: ByteReader;
+  constructor(seed: ByteSource, readonly signal?: AbortSignal) {
+    this.reader = new ByteReader(seed, signal);
+  }
+}
+
+async function scanSeedForSourceSize(seed: ByteSource, sourceSize: bigint, signal: AbortSignal | undefined, onDigest: (digest: Digest, index: bigint) => void): Promise<SeedInfo> {
+  ensureUint64(sourceSize, "sourceSize");
+  const scan = new SeedScan(seed, signal);
+  const buffer = new Uint8Array(DIGEST_SIZE);
+  const hasher = new Sha256();
+  let seedSize = 0n;
+  let blockCount = 0n;
+  try {
+    while (true) {
+      const result = await scan.reader.readInto(buffer, 0, DIGEST_SIZE);
+      throwIfAborted(signal);
+      if (result.count > 0) {
+        hasher.update(buffer.subarray(0, result.count));
+        seedSize = addSize(seedSize, result.count);
+      }
+      if (result.count === 0 && result.eof) break;
+      if (result.count !== DIGEST_SIZE) {
+        throw new MasterSeedError(ERROR_CODES.INVALID_SEED_LENGTH, "seed ended in the middle of a digest", { seedSize });
+      }
+      onDigest(Digest.fromBytes(buffer), blockCount);
+      blockCount += 1n;
+    }
+  } finally {
+    await scan.reader.close();
+  }
+  return makeInfo(blockCount, sourceSize, true, seedSize, toDigest(hasher.digest()));
+}
+
+function expectedSeedSizeForSource(sourceSize: bigint): bigint {
+  return seedSizeForBlockCount(blockCountForSourceSize(sourceSize));
+}
+
+function verifySeedSizeBinding(info: SeedInfo, sourceSize: bigint): void {
+  const expectedBlocks = blockCountForSourceSize(sourceSize);
+  if (info.blockCount !== expectedBlocks) {
+    throw new MasterSeedError(ERROR_CODES.SEED_SIZE_MISMATCH, "seed digest count does not match source size", {
+      seedSize: info.seedSize,
+      expectedSeedSize: expectedSeedSizeForSource(sourceSize),
+      blockCount: info.blockCount,
+      expectedBlockCount: expectedBlocks
+    });
+  }
+}
+
+export async function verifySeedForSourceSize(seed: ByteSource, expectedSeedHash: Digest, sourceSize: bigint, signal?: AbortSignal): Promise<SeedInfo> {
+  const info = await scanSeedForSourceSize(seed, sourceSize, signal, () => undefined);
+  if (!info.seedHash.equals(expectedSeedHash)) {
+    throw new MasterSeedError(ERROR_CODES.SEED_HASH_MISMATCH, "seed hash does not match expected digest", {
+      expected: expectedSeedHash.toHex(), actual: info.seedHash.toHex(), seedSize: info.seedSize
+    });
+  }
+  verifySeedSizeBinding(info, sourceSize);
+  return info;
+}
+
+export function expectedBlockSize(sourceSize: bigint, blockIndex: bigint): bigint {
+  ensureUint64(sourceSize, "sourceSize");
+  ensureUint64(blockIndex, "blockIndex");
+  const count = blockCountForSourceSize(sourceSize);
+  if (blockIndex >= count) throw new MasterSeedError(ERROR_CODES.BLOCK_INDEX_OUT_OF_RANGE, "block index is outside the source", { blockIndex, blockCount: count });
+  if (blockIndex + 1n < count) return BLOCK_SIZE_BIGINT;
+  const remainder = sourceSize % BLOCK_SIZE_BIGINT;
+  return remainder === 0n ? BLOCK_SIZE_BIGINT : remainder;
+}
+
+export async function findBlockHash(seed: ByteSource, expectedSeedHash: Digest, sourceSize: bigint, blockHash: Digest, signal?: AbortSignal): Promise<BlockMatches> {
+  let matchCount = 0n;
+  let firstIndex = 0n;
+  let lastIndex = 0n;
+  const info = await scanSeedForSourceSize(seed, sourceSize, signal, (digest, index) => {
+    if (digest.equals(blockHash)) {
+      if (matchCount === 0n) firstIndex = index;
+      matchCount += 1n;
+      lastIndex = index;
+    }
+  });
+  const result: BlockMatches = { ...info, matchCount, firstIndex, lastIndex };
+  if (!info.seedHash.equals(expectedSeedHash)) {
+    throw new MasterSeedError(ERROR_CODES.SEED_HASH_MISMATCH, "seed hash does not match expected digest", { expected: expectedSeedHash.toHex(), actual: info.seedHash.toHex(), seedSize: info.seedSize });
+  }
+  verifySeedSizeBinding(info, sourceSize);
+  return result;
+}
+
+export async function verifyBlockInSeed(seed: ByteSource, expectedSeedHash: Digest, sourceSize: bigint, block: Uint8Array, signal?: AbortSignal): Promise<VerifiedBlock> {
+  throwIfAborted(signal);
+  ensureUint64(sourceSize, "sourceSize");
+  const blockHash = toDigest(new Sha256().update(block).digest());
+  let digestMatch = false;
+  let sizeMatch = false;
+  let firstIndex = 0n;
+  let firstSize = 0n;
+  const info = await scanSeedForSourceSize(seed, sourceSize, signal, (digest, index) => {
+    if (!digest.equals(blockHash)) return;
+    digestMatch = true;
+    let size: bigint;
+    try { size = expectedBlockSize(sourceSize, index); } catch { return; }
+    if (!sizeMatch && size === BigInt(block.byteLength)) {
+      sizeMatch = true;
+      firstIndex = index;
+      firstSize = size;
+    }
+  });
+  const result: VerifiedBlock = { ...info, blockHash, blockIndex: firstIndex, blockSize: firstSize };
+  if (!info.seedHash.equals(expectedSeedHash)) throw new MasterSeedError(ERROR_CODES.SEED_HASH_MISMATCH, "seed hash does not match expected digest", { expected: expectedSeedHash.toHex(), actual: info.seedHash.toHex(), seedSize: info.seedSize });
+  verifySeedSizeBinding(info, sourceSize);
+  if (!digestMatch) throw new MasterSeedError(ERROR_CODES.BLOCK_NOT_IN_SEED, "block digest is not present in seed", { actual: blockHash.toHex() });
+  if (!sizeMatch) throw new MasterSeedError(ERROR_CODES.BLOCK_SIZE_MISMATCH, "matching digest occurs only at incompatible block lengths", { actual: blockHash.toHex(), actualBlockSize: BigInt(block.byteLength) });
+  return result;
+}
+
 export async function verifySource(source: ByteSource, seed: ByteSource, signal?: AbortSignal): Promise<VerifyInfo> {
   const sourceReader = new ByteReader(source, signal);
   const seedReader = new ByteReader(seed, signal);
@@ -321,12 +457,12 @@ export function verifyBlock(block: Uint8Array, expected: Digest, signal?: AbortS
 }
 
 export function blockCountForSourceSize(sourceSize: bigint): bigint {
-  if (sourceSize < 0n) throw invalidArgument("source size cannot be negative");
+  ensureUint64(sourceSize, "sourceSize");
   return sourceSize === 0n ? 0n : ((sourceSize - 1n) / BLOCK_SIZE_BIGINT) + 1n;
 }
 
 export function seedSizeForBlockCount(blockCount: bigint): bigint {
-  if (blockCount < 0n || blockCount > ((1n << 64n) - 1n) / BigInt(DIGEST_SIZE)) {
+  if (typeof blockCount !== "bigint" || blockCount < 0n || blockCount > UINT64_MAX / BigInt(DIGEST_SIZE)) {
     throw new MasterSeedError(ERROR_CODES.INTEGER_OVERFLOW, "seed size multiplication overflow", { blockCount });
   }
   return blockCount * BigInt(DIGEST_SIZE);

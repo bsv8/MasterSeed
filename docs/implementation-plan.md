@@ -483,3 +483,162 @@ Go 与 TypeScript 两条实现线可以并行，但 `MS-001` 和测试向量结�
 - 带元数据的 V2 文件头；
 - 其他块大小或哈希算法；
 - 性能基准之外的硬件加速。
+
+## 9. SDK v1.1 可信 Seed 成员验证施工单
+
+> 本节只扩展 SDK 操作面，不改变 `keymaster-seed-v1` 的任何字节、常量或
+> 兼容性规则。Go 与 TypeScript 必须在同一个版本中提供对等能力。建议发布
+> 版本为 SDK `v1.1.0`。
+>
+> 实施状态：MS-013 至 MS-017 已完成代码、测试、文档和独立核查；MS-018 的
+> 延期边界保持有效。版本号与发布制品更新留给正式发布步骤。
+
+### MS-013 按源文件大小验证 Seed
+
+**公开操作**
+
+```go
+func VerifySeedForSourceSize(
+    ctx context.Context,
+    seed io.Reader,
+    expectedSeedHash Digest,
+    sourceSize uint64,
+) (SeedInfo, error)
+```
+
+TypeScript 对应 `verifySeedForSourceSize(seed, expectedSeedHash, sourceSize, signal)`，
+所有大小继续使用 `bigint`。
+
+**实现约束**
+
+- 单次流式读取完成结构、SeedHash 和块数量验证，不缓存完整 Seed。
+- 成功时 `SourceSizeKnown`/`sourceSizeKnown` 为 `true`，结果中的 source size
+  等于调用方输入。
+- 期望块数必须通过 `BlockCountForSourceSize`/`blockCountForSourceSize` 推导。
+- 错误优先级固定为：读取或取消、`INVALID_SEED_LENGTH`、
+  `SEED_HASH_MISMATCH`、`SEED_SIZE_MISMATCH`。
+- `SEED_SIZE_MISMATCH` 表示 Seed 结构合法且 hash 正确，但摘要数量与声明的
+  source size 不相符；错误上下文至少提供实际 seed size，并应提供期望 seed
+  size或期望块数。
+
+### MS-014 计算指定块的协议长度
+
+**公开操作**
+
+```go
+func ExpectedBlockSize(sourceSize, blockIndex uint64) (uint64, error)
+```
+
+TypeScript 对应 `expectedBlockSize(sourceSize, blockIndex): bigint`。
+
+**实现约束**
+
+- 空文件没有合法块，越界统一返回 `BLOCK_INDEX_OUT_OF_RANGE`。
+- 非尾块返回 `BlockSize`；非对齐尾块返回余数；对齐文件的尾块仍返回
+  `BlockSize`。
+- TypeScript 拒绝负数和超过 uint64 范围的输入。
+- 优先使用块数和余数计算，避免不必要的 `blockIndex * BlockSize` 溢出路径。
+
+### MS-015 在可信 Seed 中查找块摘要
+
+**公开操作**
+
+```go
+type BlockMatches struct {
+    SeedInfo
+    MatchCount uint64
+    FirstIndex uint64
+    LastIndex  uint64
+}
+
+func FindBlockHash(
+    ctx context.Context,
+    seed io.Reader,
+    expectedSeedHash Digest,
+    sourceSize uint64,
+    blockHash Digest,
+) (BlockMatches, error)
+```
+
+TypeScript 返回同语义的 `BlockMatches`，索引与计数使用 `bigint`。
+
+**实现约束**
+
+- 单次、固定内存流式扫描；按 32 字节摘要边界比较，不能做任意字节子串搜索。
+- 找到匹配后不得提前返回，必须继续至 EOF，完成 Seed 结构、SeedHash 和
+  source size 关联验证。
+- 重复摘要合法；返回总匹配数以及首、末匹配索引。
+- `MatchCount == 0` 是成功查询结果，不返回 `BLOCK_NOT_IN_SEED`；此时首、末
+  索引没有语义，调用方必须先检查匹配数。
+- `expectedSeedHash` 与 `sourceSize` 仅提供完整性绑定，其可信来源仍由上层协议
+  负责。
+
+### MS-016 验证块属于可信 Seed
+
+**公开操作**
+
+```go
+type VerifiedBlock struct {
+    SeedInfo
+    BlockHash  Digest
+    BlockIndex uint64
+    BlockSize  uint64
+}
+
+func VerifyBlockInSeed(
+    ctx context.Context,
+    seed io.Reader,
+    expectedSeedHash Digest,
+    sourceSize uint64,
+    block []byte,
+) (VerifiedBlock, error)
+```
+
+TypeScript 提供同语义的 `verifyBlockInSeed`。
+
+**实现约束**
+
+- 先计算调用方 block 的 SHA-256，但任何成员结论只能在完整扫描并验证 Seed 后
+  返回。
+- 同一摘要可出现多次；只要至少一个匹配位置的 `ExpectedBlockSize` 与实际 block
+  长度相同即成功，并返回第一个满足摘要和长度条件的位置。
+- 摘要完全不存在返回 `BLOCK_NOT_IN_SEED`；摘要存在但所有匹配位置长度均不符
+  返回 `BLOCK_SIZE_MISMATCH`。
+- 空 block、超大 block、空源文件、对齐尾块、非对齐尾块和重复摘要均必须有
+  明确测试。
+
+### MS-017 错误、测试和双 SDK 一致性
+
+**新增稳定错误码**
+
+- `SEED_SIZE_MISMATCH`
+- `BLOCK_NOT_IN_SEED`
+- `BLOCK_SIZE_MISMATCH`
+
+**验收矩阵**
+
+- [x] Go 与 TypeScript 的公开名称、结果字段、错误码和边界语义对等。
+- [x] 合法空 Seed 与 `sourceSize == 0` 验证成功。
+- [x] 结构非法优先于 hash 和大小不匹配。
+- [x] hash 不匹配优先于 source size 不匹配。
+- [x] `sourceSize` 分别覆盖 0、1、`BlockSize-1`、`BlockSize`、
+  `BlockSize+1`、对齐多块和 uint64 上界附近。
+- [x] 查找覆盖零次、一次、多次匹配，并证明不会提前返回而漏掉非法尾部或错误
+  SeedHash。
+- [x] 块验证覆盖摘要缺失、长度不符、普通块、尾块，以及同一摘要位于不同合法
+  长度位置的情况。
+- [x] Go 执行 `go test ./...` 与 `go vet ./...`；TypeScript 执行
+  `npm run check`。
+- [x] README、设计文档和 API 摘要完成同步。
+
+### MS-018 明确延期范围
+
+以下能力不属于本批次，不得顺带实现：
+
+- `EncodeSeed` / `DecodeSeed` 内存便利函数；
+- `cas` 子包、`ContentStore`、`FileStore` 和 `ImportSource`；
+- BitFS 的 `SeedSource`、`BlockSource` 或 `ContentSource` 接口；
+- 对 `keymaster-seed-v1` 文件布局的任何修改。
+
+内容存储涉及并发发布、权限、持久性、容量、垃圾回收和跨 SDK 对等性，应由
+独立立项处理；面向买卖方的内容源接口由消费这些接口的 BitFS 层定义。

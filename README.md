@@ -56,6 +56,20 @@ if err != nil { panic(err) }
 _, err = masterseed.VerifySourceFile(context.Background(), "source.bin", "source.seed", expected)
 ```
 
+当上层协议还提供可信的源文件大小时，可以同时验证 Seed 的摘要数量，并执行
+无索引的块成员查询或块内容验证：
+
+```go
+info, err := masterseed.VerifySeedForSourceSize(ctx, bytes.NewReader(seedBytes), expected, sourceSize)
+matches, err := masterseed.FindBlockHash(ctx, bytes.NewReader(seedBytes), expected, sourceSize, blockHash)
+verified, err := masterseed.VerifyBlockInSeed(ctx, bytes.NewReader(seedBytes), expected, sourceSize, blockBytes)
+```
+
+这些流式操作都会读完并认证完整 Seed 后才返回成员结论；`FindBlockHash` 的
+`MatchCount == 0` 是正常查询结果。`seed_hash` 和源文件大小的可信来源仍由
+调用方的签名、报价或其他上层协议负责。每次调用都会消费 Seed reader；执行
+多个操作时必须重新打开文件或为每次调用创建独立的 `bytes.NewReader(seedBytes)`。
+
 ## TypeScript 最小示例
 
 核心 API 接收任意 `Uint8Array` 异步 chunk；计数、大小和偏移使用 `bigint`。
@@ -73,6 +87,9 @@ console.log(info.seedHashHex);
 await createSeedFile("source.bin", "source.seed");
 await verifySourceFile("source.bin", "source.seed", Digest.fromHex(info.seedHashHex));
 ```
+
+TypeScript 核心入口也对等提供 `verifySeedForSourceSize`、`expectedBlockSize`、
+`findBlockHash` 和 `verifyBlockInSeed`；大小、计数和索引继续使用 `bigint`。
 
 默认路径生成禁止覆盖已有目标，并在同目录临时文件完成后才发布。失败或取消会清理临时文件。
 

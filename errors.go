@@ -23,22 +23,28 @@ const (
 	WriteFailed          ErrorCode = "WRITE_FAILED"
 	Aborted              ErrorCode = "ABORTED"
 	InvalidArgument      ErrorCode = "INVALID_ARGUMENT"
+	SeedSizeMismatch     ErrorCode = "SEED_SIZE_MISMATCH"
+	BlockNotInSeed       ErrorCode = "BLOCK_NOT_IN_SEED"
+	BlockSizeMismatch    ErrorCode = "BLOCK_SIZE_MISMATCH"
 )
 
 // Error is the structured error returned by the SDK. Context fields are
 // optional and are populated only when relevant to the failure.
 type Error struct {
-	Code         ErrorCode
-	Message      string
-	Cause        error
-	Operation    string
-	Path         string
-	BlockIndex   *uint64
-	BlockCount   *uint64
-	SourceOffset *uint64
-	SeedSize     *uint64
-	Expected     *Digest
-	Actual       *Digest
+	Code               ErrorCode
+	Message            string
+	Cause              error
+	Operation          string
+	Path               string
+	BlockIndex         *uint64
+	BlockCount         *uint64
+	SourceOffset       *uint64
+	SeedSize           *uint64
+	ExpectedSeedSize   *uint64
+	ExpectedBlockCount *uint64
+	ActualBlockSize    *uint64
+	Expected           *Digest
+	Actual             *Digest
 }
 
 func (e *Error) Error() string {

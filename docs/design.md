@@ -261,6 +261,10 @@ seed_offset   = i × 32
 | VerifySource | source stream, seed stream | VerifyInfo | 完整逐块校验 |
 | ReadBlockHash | random-access seed, index | Digest | 获取指定块摘要 |
 | VerifyBlock | block bytes, expected digest | result | 校验单块摘要 |
+| VerifySeedForSourceSize | seed stream, expected digest, source size | SeedInfo | 认证 Seed 并绑定源文件大小 |
+| ExpectedBlockSize | source size, block index | uint64 | 推导指定位置的协议块长度 |
+| FindBlockHash | seed stream, expected digest, source size, block digest | BlockMatches | 在可信 Seed 中查找摘要 |
+| VerifyBlockInSeed | seed stream, expected digest, source size, block bytes | VerifiedBlock | 验证块内容、成员关系和位置长度 |
 | CreateSeedFile | source path, seed path, options | SeedInfo | 原子路径封装 |
 | VerifySourceFile | source path, seed path, expected digest | VerifyInfo | 文件路径封装 |
 
@@ -282,6 +286,37 @@ seed_offset   = i × 32
 - 文件大小、块数量和偏移使用 `bigint`；只在已检查安全范围后转换为 `number`。
 - 核心公开类型不要求调用方使用 Node `Buffer`。
 
+### 10.4 可信 Seed 成员验证
+
+`VerifySeedForSourceSize` 在 `VerifySeed` 的结构和 hash 条件之外，还必须要求：
+
+```text
+actual_block_count == BlockCountForSourceSize(source_size)
+actual_seed_size   == actual_block_count * DIGEST_SIZE
+```
+
+成功结果中的 source size 必须标记为已知。Seed 长度不是摘要整数倍时返回
+`INVALID_SEED_LENGTH`；完整 SeedHash 不匹配时返回 `SEED_HASH_MISMATCH`；前两项
+均通过、但块数量与 source size 不对应时返回 `SEED_SIZE_MISMATCH`。
+
+`ExpectedBlockSize` 对空文件或越界索引返回 `BLOCK_INDEX_OUT_OF_RANGE`。除最后
+一块外均返回 `BLOCK_SIZE`；最后一块在源文件非对齐时返回余数，在源文件恰好
+对齐时仍返回 `BLOCK_SIZE`。
+
+`FindBlockHash` 必须将 Seed 严格按 32 字节摘要序列扫描。实现可以在扫描期间
+累计匹配信息，但不得在 EOF 前返回成功；只有结构、完整 SeedHash 和 source
+size 关系全部验证后，成员结果才可信。重复摘要合法，结果返回匹配总数及首、末
+索引。零次匹配是正常结果，不是错误。
+
+`VerifyBlockInSeed` 计算输入 block 的 SHA-256，并执行与 `FindBlockHash` 相同的
+完整 Seed 认证。摘要完全不存在时返回 `BLOCK_NOT_IN_SEED`；摘要存在、但所有
+匹配位置的协议长度都与输入长度不同，返回 `BLOCK_SIZE_MISMATCH`；至少一个位置
+同时满足摘要与长度时成功，并返回第一个这样的索引。
+
+上述 API 中的 expected SeedHash 与 source size 必须来自调用方信任的协议上下文。
+它们不验证签名、报价或发布者身份。操作使用单次顺序读取和固定工作内存，不返回
+随匹配数量增长的索引数组。
+
 ## 11. 错误模型
 
 错误代码是跨 SDK 的稳定语义，语言可分别实现为类型化错误或带 code 的错误对象。
@@ -291,7 +326,10 @@ seed_offset   = i × 32
 | `INVALID_SEED_LENGTH` | 种子长度不是 32 的整数倍 | seedSize |
 | `INVALID_HASH_ENCODING` | 外部摘要文本不合法 | 不回显不可信大输入 |
 | `SEED_HASH_MISMATCH` | 种子内容与预期 hash 不同 | expected, actual |
+| `SEED_SIZE_MISMATCH` | 合法且 hash 正确的 Seed 与声明的源文件大小不对应 | seedSize, expectedSeedSize / expectedBlockCount |
 | `BLOCK_HASH_MISMATCH` | 源数据块摘要不匹配 | blockIndex, sourceOffset, expected, actual |
+| `BLOCK_NOT_IN_SEED` | 指定块摘要未出现在已认证 Seed 中 | actual block digest |
+| `BLOCK_SIZE_MISMATCH` | 摘要存在但 block 长度不符合任何匹配位置 | actualBlockSize |
 | `SOURCE_TOO_SHORT` | 源文件缺少种子描述的数据 | blockIndex, sourceOffset |
 | `SOURCE_TOO_LONG` | 源文件存在额外数据 | blockIndex, sourceOffset |
 | `BLOCK_INDEX_OUT_OF_RANGE` | 请求的块编号不存在 | blockIndex, blockCount |

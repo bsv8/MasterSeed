@@ -11,7 +11,10 @@ export const ERROR_CODES = {
   READ_FAILED: "READ_FAILED",
   WRITE_FAILED: "WRITE_FAILED",
   ABORTED: "ABORTED",
-  INVALID_ARGUMENT: "INVALID_ARGUMENT"
+  INVALID_ARGUMENT: "INVALID_ARGUMENT",
+  SEED_SIZE_MISMATCH: "SEED_SIZE_MISMATCH",
+  BLOCK_NOT_IN_SEED: "BLOCK_NOT_IN_SEED",
+  BLOCK_SIZE_MISMATCH: "BLOCK_SIZE_MISMATCH"
 } as const;
 
 export type ErrorCode = (typeof ERROR_CODES)[keyof typeof ERROR_CODES];
@@ -55,4 +58,3 @@ export function writeError(cause: unknown, operation = "write"): MasterSeedError
 export function invalidArgument(message: string): MasterSeedError {
   return new MasterSeedError(ERROR_CODES.INVALID_ARGUMENT, message);
 }
-
