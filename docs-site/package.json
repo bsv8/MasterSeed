@@ -1,0 +1,22 @@
+{
+  "name": "masterseed-docs",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "api:clean": "node scripts/api-clean.mjs",
+    "api:typescript": "typedoc --options typedoc.json",
+    "api:go": "node scripts/generate-go-api.mjs",
+    "api:generate": "npm run api:clean && npm run api:typescript && npm run api:go",
+    "dev": "npm run api:generate && vitepress dev site",
+    "build": "npm run api:generate && vitepress build site",
+    "preview": "vitepress preview site"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.21",
+    "typedoc": "0.28.20",
+    "typedoc-plugin-markdown": "4.12.0",
+    "typedoc-vitepress-theme": "1.1.3",
+    "vitepress": "1.6.4"
+  }
+}
