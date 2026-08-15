@@ -1,0 +1,1285 @@
+{
+  "api": {
+    "typescript.core.classes.Digest": {
+      "source": "Immutable fixed-size SHA-256 digest.",
+      "translation": "类 Digest：表示 MasterSeed V1 的摘要或错误对象。"
+    },
+    "typescript.core.classes.Digest.methods.equals": {
+      "source": "Method equals of Digest.",
+      "translation": "方法 equals：Digest 实例提供的操作。"
+    },
+    "typescript.core.classes.Digest.methods.toBytes": {
+      "source": "Method toBytes of Digest.",
+      "translation": "方法 toBytes：Digest 实例提供的操作。"
+    },
+    "typescript.core.classes.Digest.methods.toHex": {
+      "source": "Method toHex of Digest.",
+      "translation": "方法 toHex：Digest 实例提供的操作。"
+    },
+    "typescript.core.classes.Digest.methods.toString": {
+      "source": "Method toString of Digest.",
+      "translation": "方法 toString：Digest 实例提供的操作。"
+    },
+    "typescript.core.classes.Digest.methods.fromBytes": {
+      "source": "Method fromBytes of Digest.",
+      "translation": "方法 fromBytes：Digest 实例提供的操作。"
+    },
+    "typescript.core.classes.Digest.methods.fromHex": {
+      "source": "Method fromHex of Digest.",
+      "translation": "方法 fromHex：Digest 实例提供的操作。"
+    },
+    "typescript.core.classes.MasterSeedError": {
+      "source": "Public MasterSeed class MasterSeedError.",
+      "translation": "类 MasterSeedError：表示 MasterSeed V1 的摘要或错误对象。"
+    },
+    "typescript.core.classes.MasterSeedError.fields.cause": {
+      "source": "Property cause of MasterSeedError.",
+      "translation": "字段 cause：MasterSeedError 结果中的数据成员。"
+    },
+    "typescript.core.classes.MasterSeedError.fields.code": {
+      "source": "Property code of MasterSeedError.",
+      "translation": "字段 code：MasterSeedError 结果中的数据成员。"
+    },
+    "typescript.core.classes.MasterSeedError.fields.context": {
+      "source": "Property context of MasterSeedError.",
+      "translation": "字段 context：MasterSeedError 结果中的数据成员。"
+    },
+    "typescript.core.types.AsyncByteSink": {
+      "source": "Public MasterSeed interface AsyncByteSink.",
+      "translation": "类型 AsyncByteSink：描述 MasterSeed V1 数据结构。"
+    },
+    "typescript.core.types.AsyncByteSink.methods.write": {
+      "source": "Method write of AsyncByteSink.",
+      "translation": "方法 write：AsyncByteSink 实例提供的操作。"
+    },
+    "typescript.core.types.BlockMatches": {
+      "source": "Public MasterSeed interface BlockMatches.",
+      "translation": "类型 BlockMatches：描述 MasterSeed V1 数据结构。"
+    },
+    "typescript.core.types.BlockMatches.fields.blockCount": {
+      "source": "Property blockCount of BlockMatches.",
+      "translation": "字段 blockCount：BlockMatches 结果中的数据成员。"
+    },
+    "typescript.core.types.BlockMatches.fields.blockSize": {
+      "source": "Property blockSize of BlockMatches.",
+      "translation": "字段 blockSize：BlockMatches 结果中的数据成员。"
+    },
+    "typescript.core.types.BlockMatches.fields.firstIndex": {
+      "source": "Property firstIndex of BlockMatches.",
+      "translation": "字段 firstIndex：BlockMatches 结果中的数据成员。"
+    },
+    "typescript.core.types.BlockMatches.fields.format": {
+      "source": "Property format of BlockMatches.",
+      "translation": "字段 format：BlockMatches 结果中的数据成员。"
+    },
+    "typescript.core.types.BlockMatches.fields.lastIndex": {
+      "source": "Property lastIndex of BlockMatches.",
+      "translation": "字段 lastIndex：BlockMatches 结果中的数据成员。"
+    },
+    "typescript.core.types.BlockMatches.fields.matchCount": {
+      "source": "Property matchCount of BlockMatches.",
+      "translation": "字段 matchCount：BlockMatches 结果中的数据成员。"
+    },
+    "typescript.core.types.BlockMatches.fields.seedHash": {
+      "source": "Property seedHash of BlockMatches.",
+      "translation": "字段 seedHash：BlockMatches 结果中的数据成员。"
+    },
+    "typescript.core.types.BlockMatches.fields.seedHashHex": {
+      "source": "Property seedHashHex of BlockMatches.",
+      "translation": "字段 seedHashHex：BlockMatches 结果中的数据成员。"
+    },
+    "typescript.core.types.BlockMatches.fields.seedSize": {
+      "source": "Property seedSize of BlockMatches.",
+      "translation": "字段 seedSize：BlockMatches 结果中的数据成员。"
+    },
+    "typescript.core.types.BlockMatches.fields.sourceSize": {
+      "source": "Property sourceSize of BlockMatches.",
+      "translation": "字段 sourceSize：BlockMatches 结果中的数据成员。"
+    },
+    "typescript.core.types.BlockMatches.fields.sourceSizeKnown": {
+      "source": "Property sourceSizeKnown of BlockMatches.",
+      "translation": "字段 sourceSizeKnown：BlockMatches 结果中的数据成员。"
+    },
+    "typescript.core.types.RandomAccessSeed": {
+      "source": "Public MasterSeed interface RandomAccessSeed.",
+      "translation": "类型 RandomAccessSeed：描述 MasterSeed V1 数据结构。"
+    },
+    "typescript.core.types.RandomAccessSeed.methods.readAt": {
+      "source": "Method readAt of RandomAccessSeed.",
+      "translation": "方法 readAt：RandomAccessSeed 实例提供的操作。"
+    },
+    "typescript.core.types.SeedInfo": {
+      "source": "Public MasterSeed interface SeedInfo.",
+      "translation": "类型 SeedInfo：描述 MasterSeed V1 数据结构。"
+    },
+    "typescript.core.types.SeedInfo.fields.blockCount": {
+      "source": "Property blockCount of SeedInfo.",
+      "translation": "字段 blockCount：SeedInfo 结果中的数据成员。"
+    },
+    "typescript.core.types.SeedInfo.fields.blockSize": {
+      "source": "Property blockSize of SeedInfo.",
+      "translation": "字段 blockSize：SeedInfo 结果中的数据成员。"
+    },
+    "typescript.core.types.SeedInfo.fields.format": {
+      "source": "Property format of SeedInfo.",
+      "translation": "字段 format：SeedInfo 结果中的数据成员。"
+    },
+    "typescript.core.types.SeedInfo.fields.seedHash": {
+      "source": "Property seedHash of SeedInfo.",
+      "translation": "字段 seedHash：SeedInfo 结果中的数据成员。"
+    },
+    "typescript.core.types.SeedInfo.fields.seedHashHex": {
+      "source": "Property seedHashHex of SeedInfo.",
+      "translation": "字段 seedHashHex：SeedInfo 结果中的数据成员。"
+    },
+    "typescript.core.types.SeedInfo.fields.seedSize": {
+      "source": "Property seedSize of SeedInfo.",
+      "translation": "字段 seedSize：SeedInfo 结果中的数据成员。"
+    },
+    "typescript.core.types.SeedInfo.fields.sourceSize": {
+      "source": "Property sourceSize of SeedInfo.",
+      "translation": "字段 sourceSize：SeedInfo 结果中的数据成员。"
+    },
+    "typescript.core.types.SeedInfo.fields.sourceSizeKnown": {
+      "source": "Property sourceSizeKnown of SeedInfo.",
+      "translation": "字段 sourceSizeKnown：SeedInfo 结果中的数据成员。"
+    },
+    "typescript.core.types.VerifiedBlock": {
+      "source": "Public MasterSeed interface VerifiedBlock.",
+      "translation": "类型 VerifiedBlock：描述 MasterSeed V1 数据结构。"
+    },
+    "typescript.core.types.VerifiedBlock.fields.blockCount": {
+      "source": "Property blockCount of VerifiedBlock.",
+      "translation": "字段 blockCount：VerifiedBlock 结果中的数据成员。"
+    },
+    "typescript.core.types.VerifiedBlock.fields.blockHash": {
+      "source": "Property blockHash of VerifiedBlock.",
+      "translation": "字段 blockHash：VerifiedBlock 结果中的数据成员。"
+    },
+    "typescript.core.types.VerifiedBlock.fields.blockIndex": {
+      "source": "Property blockIndex of VerifiedBlock.",
+      "translation": "字段 blockIndex：VerifiedBlock 结果中的数据成员。"
+    },
+    "typescript.core.types.VerifiedBlock.fields.blockSize": {
+      "source": "Property blockSize of VerifiedBlock.",
+      "translation": "字段 blockSize：VerifiedBlock 结果中的数据成员。"
+    },
+    "typescript.core.types.VerifiedBlock.fields.format": {
+      "source": "Property format of VerifiedBlock.",
+      "translation": "字段 format：VerifiedBlock 结果中的数据成员。"
+    },
+    "typescript.core.types.VerifiedBlock.fields.seedHash": {
+      "source": "Property seedHash of VerifiedBlock.",
+      "translation": "字段 seedHash：VerifiedBlock 结果中的数据成员。"
+    },
+    "typescript.core.types.VerifiedBlock.fields.seedHashHex": {
+      "source": "Property seedHashHex of VerifiedBlock.",
+      "translation": "字段 seedHashHex：VerifiedBlock 结果中的数据成员。"
+    },
+    "typescript.core.types.VerifiedBlock.fields.seedSize": {
+      "source": "Property seedSize of VerifiedBlock.",
+      "translation": "字段 seedSize：VerifiedBlock 结果中的数据成员。"
+    },
+    "typescript.core.types.VerifiedBlock.fields.sourceSize": {
+      "source": "Property sourceSize of VerifiedBlock.",
+      "translation": "字段 sourceSize：VerifiedBlock 结果中的数据成员。"
+    },
+    "typescript.core.types.VerifiedBlock.fields.sourceSizeKnown": {
+      "source": "Property sourceSizeKnown of VerifiedBlock.",
+      "translation": "字段 sourceSizeKnown：VerifiedBlock 结果中的数据成员。"
+    },
+    "typescript.core.types.VerifyInfo": {
+      "source": "Public MasterSeed interface VerifyInfo.",
+      "translation": "类型 VerifyInfo：描述 MasterSeed V1 数据结构。"
+    },
+    "typescript.core.types.VerifyInfo.fields.blockCount": {
+      "source": "Property blockCount of VerifyInfo.",
+      "translation": "字段 blockCount：VerifyInfo 结果中的数据成员。"
+    },
+    "typescript.core.types.VerifyInfo.fields.blockSize": {
+      "source": "Property blockSize of VerifyInfo.",
+      "translation": "字段 blockSize：VerifyInfo 结果中的数据成员。"
+    },
+    "typescript.core.types.VerifyInfo.fields.blocksVerified": {
+      "source": "Property blocksVerified of VerifyInfo.",
+      "translation": "字段 blocksVerified：VerifyInfo 结果中的数据成员。"
+    },
+    "typescript.core.types.VerifyInfo.fields.format": {
+      "source": "Property format of VerifyInfo.",
+      "translation": "字段 format：VerifyInfo 结果中的数据成员。"
+    },
+    "typescript.core.types.VerifyInfo.fields.seedHash": {
+      "source": "Property seedHash of VerifyInfo.",
+      "translation": "字段 seedHash：VerifyInfo 结果中的数据成员。"
+    },
+    "typescript.core.types.VerifyInfo.fields.seedHashHex": {
+      "source": "Property seedHashHex of VerifyInfo.",
+      "translation": "字段 seedHashHex：VerifyInfo 结果中的数据成员。"
+    },
+    "typescript.core.types.VerifyInfo.fields.seedSize": {
+      "source": "Property seedSize of VerifyInfo.",
+      "translation": "字段 seedSize：VerifyInfo 结果中的数据成员。"
+    },
+    "typescript.core.types.VerifyInfo.fields.sourceSize": {
+      "source": "Property sourceSize of VerifyInfo.",
+      "translation": "字段 sourceSize：VerifyInfo 结果中的数据成员。"
+    },
+    "typescript.core.types.VerifyInfo.fields.sourceSizeKnown": {
+      "source": "Property sourceSizeKnown of VerifyInfo.",
+      "translation": "字段 sourceSizeKnown：VerifyInfo 结果中的数据成员。"
+    },
+    "typescript.core.constants.BLOCK_SIZE": {
+      "source": "Public MasterSeed variable BLOCK_SIZE.",
+      "translation": "常量 BLOCK_SIZE：定义 MasterSeed V1 协议值。"
+    },
+    "typescript.core.constants.BLOCK_SIZE_BIGINT": {
+      "source": "Public MasterSeed variable BLOCK_SIZE_BIGINT.",
+      "translation": "常量 BLOCK_SIZE_BIGINT：定义 MasterSeed V1 协议值。"
+    },
+    "typescript.core.constants.DIGEST_SIZE": {
+      "source": "Public MasterSeed variable DIGEST_SIZE.",
+      "translation": "常量 DIGEST_SIZE：定义 MasterSeed V1 协议值。"
+    },
+    "typescript.core.constants.ERROR_CODES": {
+      "source": "Public MasterSeed variable ERROR_CODES.",
+      "translation": "常量 ERROR_CODES：定义 MasterSeed V1 协议值。"
+    },
+    "typescript.core.constants.FORMAT": {
+      "source": "Public MasterSeed variable FORMAT.",
+      "translation": "常量 FORMAT：定义 MasterSeed V1 协议值。"
+    },
+    "typescript.core.constants.HASH_ALGORITHM": {
+      "source": "Public MasterSeed variable HASH_ALGORITHM.",
+      "translation": "常量 HASH_ALGORITHM：定义 MasterSeed V1 协议值。"
+    },
+    "typescript.core.functions.blockCountForSourceSize": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 blockCountForSourceSize：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.blockCountForSourceSize.parameters.sourceSize": {
+      "source": "Parameter sourceSize of blockCountForSourceSize.",
+      "translation": "参数 sourceSize：为 blockCountForSourceSize 提供所需输入。"
+    },
+    "typescript.core.functions.createSeed": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 createSeed：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.createSeed.parameters.source": {
+      "source": "Parameter source of createSeed.",
+      "translation": "参数 source：为 createSeed 提供所需输入。"
+    },
+    "typescript.core.functions.createSeed.parameters.sink": {
+      "source": "Parameter sink of createSeed.",
+      "translation": "参数 sink：为 createSeed 提供所需输入。"
+    },
+    "typescript.core.functions.createSeed.parameters.signal": {
+      "source": "Parameter signal of createSeed.",
+      "translation": "参数 signal：为 createSeed 提供所需输入。"
+    },
+    "typescript.core.functions.expectedBlockSize": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 expectedBlockSize：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.expectedBlockSize.parameters.sourceSize": {
+      "source": "Parameter sourceSize of expectedBlockSize.",
+      "translation": "参数 sourceSize：为 expectedBlockSize 提供所需输入。"
+    },
+    "typescript.core.functions.expectedBlockSize.parameters.blockIndex": {
+      "source": "Parameter blockIndex of expectedBlockSize.",
+      "translation": "参数 blockIndex：为 expectedBlockSize 提供所需输入。"
+    },
+    "typescript.core.functions.findBlockHash": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 findBlockHash：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.findBlockHash.parameters.seed": {
+      "source": "Parameter seed of findBlockHash.",
+      "translation": "参数 seed：为 findBlockHash 提供所需输入。"
+    },
+    "typescript.core.functions.findBlockHash.parameters.expectedSeedHash": {
+      "source": "Parameter expectedSeedHash of findBlockHash.",
+      "translation": "参数 expectedSeedHash：为 findBlockHash 提供所需输入。"
+    },
+    "typescript.core.functions.findBlockHash.parameters.sourceSize": {
+      "source": "Parameter sourceSize of findBlockHash.",
+      "translation": "参数 sourceSize：为 findBlockHash 提供所需输入。"
+    },
+    "typescript.core.functions.findBlockHash.parameters.blockHash": {
+      "source": "Parameter blockHash of findBlockHash.",
+      "translation": "参数 blockHash：为 findBlockHash 提供所需输入。"
+    },
+    "typescript.core.functions.findBlockHash.parameters.signal": {
+      "source": "Parameter signal of findBlockHash.",
+      "translation": "参数 signal：为 findBlockHash 提供所需输入。"
+    },
+    "typescript.core.functions.hashSeed": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 hashSeed：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.hashSeed.parameters.seed": {
+      "source": "Parameter seed of hashSeed.",
+      "translation": "参数 seed：为 hashSeed 提供所需输入。"
+    },
+    "typescript.core.functions.hashSeed.parameters.signal": {
+      "source": "Parameter signal of hashSeed.",
+      "translation": "参数 signal：为 hashSeed 提供所需输入。"
+    },
+    "typescript.core.functions.inspectSeed": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 inspectSeed：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.inspectSeed.parameters.seed": {
+      "source": "Parameter seed of inspectSeed.",
+      "translation": "参数 seed：为 inspectSeed 提供所需输入。"
+    },
+    "typescript.core.functions.inspectSeed.parameters.signal": {
+      "source": "Parameter signal of inspectSeed.",
+      "translation": "参数 signal：为 inspectSeed 提供所需输入。"
+    },
+    "typescript.core.functions.invalidArgument": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 invalidArgument：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.invalidArgument.parameters.message": {
+      "source": "Parameter message of invalidArgument.",
+      "translation": "参数 message：为 invalidArgument 提供所需输入。"
+    },
+    "typescript.core.functions.isMasterSeedError": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 isMasterSeedError：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.isMasterSeedError.parameters.value": {
+      "source": "Parameter value of isMasterSeedError.",
+      "translation": "参数 value：为 isMasterSeedError 提供所需输入。"
+    },
+    "typescript.core.functions.readBlockHash": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 readBlockHash：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.readBlockHash.parameters.seed": {
+      "source": "Parameter seed of readBlockHash.",
+      "translation": "参数 seed：为 readBlockHash 提供所需输入。"
+    },
+    "typescript.core.functions.readBlockHash.parameters.seedSize": {
+      "source": "Parameter seedSize of readBlockHash.",
+      "translation": "参数 seedSize：为 readBlockHash 提供所需输入。"
+    },
+    "typescript.core.functions.readBlockHash.parameters.blockIndex": {
+      "source": "Parameter blockIndex of readBlockHash.",
+      "translation": "参数 blockIndex：为 readBlockHash 提供所需输入。"
+    },
+    "typescript.core.functions.readBlockHash.parameters.signal": {
+      "source": "Parameter signal of readBlockHash.",
+      "translation": "参数 signal：为 readBlockHash 提供所需输入。"
+    },
+    "typescript.core.functions.readError": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 readError：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.readError.parameters.cause": {
+      "source": "Parameter cause of readError.",
+      "translation": "参数 cause：为 readError 提供所需输入。"
+    },
+    "typescript.core.functions.readError.parameters.operation": {
+      "source": "Parameter operation of readError.",
+      "translation": "参数 operation：为 readError 提供所需输入。"
+    },
+    "typescript.core.functions.seedOffset": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 seedOffset：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.seedOffset.parameters.blockIndex": {
+      "source": "Parameter blockIndex of seedOffset.",
+      "translation": "参数 blockIndex：为 seedOffset 提供所需输入。"
+    },
+    "typescript.core.functions.seedSizeForBlockCount": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 seedSizeForBlockCount：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.seedSizeForBlockCount.parameters.blockCount": {
+      "source": "Parameter blockCount of seedSizeForBlockCount.",
+      "translation": "参数 blockCount：为 seedSizeForBlockCount 提供所需输入。"
+    },
+    "typescript.core.functions.sourceOffset": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 sourceOffset：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.sourceOffset.parameters.blockIndex": {
+      "source": "Parameter blockIndex of sourceOffset.",
+      "translation": "参数 blockIndex：为 sourceOffset 提供所需输入。"
+    },
+    "typescript.core.functions.throwIfAborted": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 throwIfAborted：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.throwIfAborted.parameters.signal": {
+      "source": "Parameter signal of throwIfAborted.",
+      "translation": "参数 signal：为 throwIfAborted 提供所需输入。"
+    },
+    "typescript.core.functions.verifyBlock": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 verifyBlock：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.verifyBlock.parameters.block": {
+      "source": "Parameter block of verifyBlock.",
+      "translation": "参数 block：为 verifyBlock 提供所需输入。"
+    },
+    "typescript.core.functions.verifyBlock.parameters.expected": {
+      "source": "Parameter expected of verifyBlock.",
+      "translation": "参数 expected：为 verifyBlock 提供所需输入。"
+    },
+    "typescript.core.functions.verifyBlock.parameters.signal": {
+      "source": "Parameter signal of verifyBlock.",
+      "translation": "参数 signal：为 verifyBlock 提供所需输入。"
+    },
+    "typescript.core.functions.verifyBlockInSeed": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 verifyBlockInSeed：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.verifyBlockInSeed.parameters.seed": {
+      "source": "Parameter seed of verifyBlockInSeed.",
+      "translation": "参数 seed：为 verifyBlockInSeed 提供所需输入。"
+    },
+    "typescript.core.functions.verifyBlockInSeed.parameters.expectedSeedHash": {
+      "source": "Parameter expectedSeedHash of verifyBlockInSeed.",
+      "translation": "参数 expectedSeedHash：为 verifyBlockInSeed 提供所需输入。"
+    },
+    "typescript.core.functions.verifyBlockInSeed.parameters.sourceSize": {
+      "source": "Parameter sourceSize of verifyBlockInSeed.",
+      "translation": "参数 sourceSize：为 verifyBlockInSeed 提供所需输入。"
+    },
+    "typescript.core.functions.verifyBlockInSeed.parameters.block": {
+      "source": "Parameter block of verifyBlockInSeed.",
+      "translation": "参数 block：为 verifyBlockInSeed 提供所需输入。"
+    },
+    "typescript.core.functions.verifyBlockInSeed.parameters.signal": {
+      "source": "Parameter signal of verifyBlockInSeed.",
+      "translation": "参数 signal：为 verifyBlockInSeed 提供所需输入。"
+    },
+    "typescript.core.functions.verifySeed": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 verifySeed：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.verifySeed.parameters.seed": {
+      "source": "Parameter seed of verifySeed.",
+      "translation": "参数 seed：为 verifySeed 提供所需输入。"
+    },
+    "typescript.core.functions.verifySeed.parameters.expected": {
+      "source": "Parameter expected of verifySeed.",
+      "translation": "参数 expected：为 verifySeed 提供所需输入。"
+    },
+    "typescript.core.functions.verifySeed.parameters.signal": {
+      "source": "Parameter signal of verifySeed.",
+      "translation": "参数 signal：为 verifySeed 提供所需输入。"
+    },
+    "typescript.core.functions.verifySeedForSourceSize": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 verifySeedForSourceSize：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.verifySeedForSourceSize.parameters.seed": {
+      "source": "Parameter seed of verifySeedForSourceSize.",
+      "translation": "参数 seed：为 verifySeedForSourceSize 提供所需输入。"
+    },
+    "typescript.core.functions.verifySeedForSourceSize.parameters.expectedSeedHash": {
+      "source": "Parameter expectedSeedHash of verifySeedForSourceSize.",
+      "translation": "参数 expectedSeedHash：为 verifySeedForSourceSize 提供所需输入。"
+    },
+    "typescript.core.functions.verifySeedForSourceSize.parameters.sourceSize": {
+      "source": "Parameter sourceSize of verifySeedForSourceSize.",
+      "translation": "参数 sourceSize：为 verifySeedForSourceSize 提供所需输入。"
+    },
+    "typescript.core.functions.verifySeedForSourceSize.parameters.signal": {
+      "source": "Parameter signal of verifySeedForSourceSize.",
+      "translation": "参数 signal：为 verifySeedForSourceSize 提供所需输入。"
+    },
+    "typescript.core.functions.verifySource": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 verifySource：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.verifySource.parameters.source": {
+      "source": "Parameter source of verifySource.",
+      "translation": "参数 source：为 verifySource 提供所需输入。"
+    },
+    "typescript.core.functions.verifySource.parameters.seed": {
+      "source": "Parameter seed of verifySource.",
+      "translation": "参数 seed：为 verifySource 提供所需输入。"
+    },
+    "typescript.core.functions.verifySource.parameters.signal": {
+      "source": "Parameter signal of verifySource.",
+      "translation": "参数 signal：为 verifySource 提供所需输入。"
+    },
+    "typescript.core.functions.writeError": {
+      "source": "Public MasterSeed SDK declaration.",
+      "translation": "函数 writeError：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.core.functions.writeError.parameters.cause": {
+      "source": "Parameter cause of writeError.",
+      "translation": "参数 cause：为 writeError 提供所需输入。"
+    },
+    "typescript.core.functions.writeError.parameters.operation": {
+      "source": "Parameter operation of writeError.",
+      "translation": "参数 operation：为 writeError 提供所需输入。"
+    },
+    "typescript.node.types.CreateSeedFileOptions": {
+      "source": "Public MasterSeed interface CreateSeedFileOptions.",
+      "translation": "类型 CreateSeedFileOptions：描述 MasterSeed V1 数据结构。"
+    },
+    "typescript.node.types.CreateSeedFileOptions.fields.chunkSize": {
+      "source": "Property chunkSize of CreateSeedFileOptions.",
+      "translation": "字段 chunkSize：CreateSeedFileOptions 结果中的数据成员。"
+    },
+    "typescript.node.types.CreateSeedFileOptions.fields.overwrite": {
+      "source": "Property overwrite of CreateSeedFileOptions.",
+      "translation": "字段 overwrite：CreateSeedFileOptions 结果中的数据成员。"
+    },
+    "typescript.node.types.CreateSeedFileOptions.fields.sync": {
+      "source": "Property sync of CreateSeedFileOptions.",
+      "translation": "字段 sync：CreateSeedFileOptions 结果中的数据成员。"
+    },
+    "typescript.node.functions.createSeedFile": {
+      "source": "Create and atomically publish a seed file in Node.js.",
+      "translation": "函数 createSeedFile：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.node.functions.createSeedFile.parameters.sourcePath": {
+      "source": "Parameter sourcePath of createSeedFile.",
+      "translation": "参数 sourcePath：为 createSeedFile 提供所需输入。"
+    },
+    "typescript.node.functions.createSeedFile.parameters.seedPath": {
+      "source": "Parameter seedPath of createSeedFile.",
+      "translation": "参数 seedPath：为 createSeedFile 提供所需输入。"
+    },
+    "typescript.node.functions.createSeedFile.parameters.options": {
+      "source": "Parameter options of createSeedFile.",
+      "translation": "参数 options：为 createSeedFile 提供所需输入。"
+    },
+    "typescript.node.functions.createSeedFile.parameters.signal": {
+      "source": "Parameter signal of createSeedFile.",
+      "translation": "参数 signal：为 createSeedFile 提供所需输入。"
+    },
+    "typescript.node.functions.readBlockHashFile": {
+      "source": "Read one block hash from a Node seed file without exposing Buffer in core APIs.",
+      "translation": "函数 readBlockHashFile：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.node.functions.readBlockHashFile.parameters.seedPath": {
+      "source": "Parameter seedPath of readBlockHashFile.",
+      "translation": "参数 seedPath：为 readBlockHashFile 提供所需输入。"
+    },
+    "typescript.node.functions.readBlockHashFile.parameters.blockIndex": {
+      "source": "Parameter blockIndex of readBlockHashFile.",
+      "translation": "参数 blockIndex：为 readBlockHashFile 提供所需输入。"
+    },
+    "typescript.node.functions.readBlockHashFile.parameters.signal": {
+      "source": "Parameter signal of readBlockHashFile.",
+      "translation": "参数 signal：为 readBlockHashFile 提供所需输入。"
+    },
+    "typescript.node.functions.verifySourceFile": {
+      "source": "Verify the trusted seed hash, then perform the complete source pass.",
+      "translation": "函数 verifySourceFile：处理 MasterSeed V1 数据种子。"
+    },
+    "typescript.node.functions.verifySourceFile.parameters.sourcePath": {
+      "source": "Parameter sourcePath of verifySourceFile.",
+      "translation": "参数 sourcePath：为 verifySourceFile 提供所需输入。"
+    },
+    "typescript.node.functions.verifySourceFile.parameters.seedPath": {
+      "source": "Parameter seedPath of verifySourceFile.",
+      "translation": "参数 seedPath：为 verifySourceFile 提供所需输入。"
+    },
+    "typescript.node.functions.verifySourceFile.parameters.expected": {
+      "source": "Parameter expected of verifySourceFile.",
+      "translation": "参数 expected：为 verifySourceFile 提供所需输入。"
+    },
+    "typescript.node.functions.verifySourceFile.parameters.signal": {
+      "source": "Parameter signal of verifySourceFile.",
+      "translation": "参数 signal：为 verifySourceFile 提供所需输入。"
+    },
+    "typescript.node.types.BLOCK_SIZE": {
+      "source": "Public MasterSeed type alias BLOCK_SIZE.",
+      "translation": "类型 BLOCK_SIZE：描述 MasterSeed V1 数据结构。"
+    },
+    "go.core.types.SeedInfo": {
+      "source": "SeedInfo describes a seed file. SourceSizeKnown is false for HashSeed and\nInspectSeed because a seed file does not encode source length.",
+      "translation": "类型 SeedInfo：描述 MasterSeed V1 数据结构。"
+    },
+    "go.core.types.SeedInfo.fields.Format": {
+      "source": "Field Format of SeedInfo.",
+      "translation": "字段 Format：SeedInfo 结果中的数据成员。"
+    },
+    "go.core.types.SeedInfo.fields.BlockSize": {
+      "source": "Field BlockSize of SeedInfo.",
+      "translation": "字段 BlockSize：SeedInfo 结果中的数据成员。"
+    },
+    "go.core.types.SeedInfo.fields.BlockCount": {
+      "source": "Field BlockCount of SeedInfo.",
+      "translation": "字段 BlockCount：SeedInfo 结果中的数据成员。"
+    },
+    "go.core.types.SeedInfo.fields.SourceSize": {
+      "source": "Field SourceSize of SeedInfo.",
+      "translation": "字段 SourceSize：SeedInfo 结果中的数据成员。"
+    },
+    "go.core.types.SeedInfo.fields.SourceSizeKnown": {
+      "source": "Field SourceSizeKnown of SeedInfo.",
+      "translation": "字段 SourceSizeKnown：SeedInfo 结果中的数据成员。"
+    },
+    "go.core.types.SeedInfo.fields.SeedSize": {
+      "source": "Field SeedSize of SeedInfo.",
+      "translation": "字段 SeedSize：SeedInfo 结果中的数据成员。"
+    },
+    "go.core.types.SeedInfo.fields.SeedHash": {
+      "source": "Field SeedHash of SeedInfo.",
+      "translation": "字段 SeedHash：SeedInfo 结果中的数据成员。"
+    },
+    "go.core.types.SeedInfo.fields.SeedHashHex": {
+      "source": "Field SeedHashHex of SeedInfo.",
+      "translation": "字段 SeedHashHex：SeedInfo 结果中的数据成员。"
+    },
+    "go.core.types.VerifyInfo": {
+      "source": "VerifyInfo describes a successful complete source verification.",
+      "translation": "类型 VerifyInfo：描述 MasterSeed V1 数据结构。"
+    },
+    "go.core.types.VerifyInfo.fields.BlocksVerified": {
+      "source": "Field BlocksVerified of VerifyInfo.",
+      "translation": "字段 BlocksVerified：VerifyInfo 结果中的数据成员。"
+    },
+    "go.core.functions.BlockCountForSourceSize": {
+      "source": "BlockCountForSourceSize applies the V1 empty-file and aligned-file rules.",
+      "translation": "函数 BlockCountForSourceSize：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.BlockCountForSourceSize.parameters.sourceSize": {
+      "source": "Parameter sourceSize of BlockCountForSourceSize.",
+      "translation": "参数 sourceSize：为 BlockCountForSourceSize 提供所需输入。"
+    },
+    "go.core.functions.SeedSizeForBlockCount": {
+      "source": "SeedSizeForBlockCount checks the block-count multiplication used by callers\nthat work with untrusted metadata.",
+      "translation": "函数 SeedSizeForBlockCount：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.SeedSizeForBlockCount.parameters.blockCount": {
+      "source": "Parameter blockCount of SeedSizeForBlockCount.",
+      "translation": "参数 blockCount：为 SeedSizeForBlockCount 提供所需输入。"
+    },
+    "go.core.functions.SourceOffset": {
+      "source": "SourceOffset returns blockIndex*BLOCK_SIZE after checking overflow.",
+      "translation": "函数 SourceOffset：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.SourceOffset.parameters.blockIndex": {
+      "source": "Parameter blockIndex of SourceOffset.",
+      "translation": "参数 blockIndex：为 SourceOffset 提供所需输入。"
+    },
+    "go.core.functions.SeedOffset": {
+      "source": "SeedOffset returns blockIndex*DIGEST_SIZE after checking overflow.",
+      "translation": "函数 SeedOffset：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.SeedOffset.parameters.blockIndex": {
+      "source": "Parameter blockIndex of SeedOffset.",
+      "translation": "参数 blockIndex：为 SeedOffset 提供所需输入。"
+    },
+    "go.core.functions.CreateSeed": {
+      "source": "CreateSeed hashes source in protocol-sized blocks and writes raw 32-byte\ndigests to sink. It never writes hexadecimal text to the sink.",
+      "translation": "函数 CreateSeed：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.CreateSeed.parameters.ctx": {
+      "source": "Parameter ctx of CreateSeed.",
+      "translation": "参数 ctx：为 CreateSeed 提供所需输入。"
+    },
+    "go.core.functions.CreateSeed.parameters.source": {
+      "source": "Parameter source of CreateSeed.",
+      "translation": "参数 source：为 CreateSeed 提供所需输入。"
+    },
+    "go.core.functions.CreateSeed.parameters.sink": {
+      "source": "Parameter sink of CreateSeed.",
+      "translation": "参数 sink：为 CreateSeed 提供所需输入。"
+    },
+    "go.core.functions.HashSeed": {
+      "source": "HashSeed computes SHA-256 over any seed bytes without validating its length.",
+      "translation": "函数 HashSeed：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.HashSeed.parameters.ctx": {
+      "source": "Parameter ctx of HashSeed.",
+      "translation": "参数 ctx：为 HashSeed 提供所需输入。"
+    },
+    "go.core.functions.HashSeed.parameters.seed": {
+      "source": "Parameter seed of HashSeed.",
+      "translation": "参数 seed：为 HashSeed 提供所需输入。"
+    },
+    "go.core.functions.InspectSeed": {
+      "source": "InspectSeed computes seed_hash and requires the seed length to be a multiple\nof the raw digest size.",
+      "translation": "函数 InspectSeed：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.InspectSeed.parameters.ctx": {
+      "source": "Parameter ctx of InspectSeed.",
+      "translation": "参数 ctx：为 InspectSeed 提供所需输入。"
+    },
+    "go.core.functions.InspectSeed.parameters.seed": {
+      "source": "Parameter seed of InspectSeed.",
+      "translation": "参数 seed：为 InspectSeed 提供所需输入。"
+    },
+    "go.core.functions.VerifySeed": {
+      "source": "VerifySeed strictly inspects a seed and compares its raw-byte hash with the\ncaller's expected digest using a constant-time comparison.",
+      "translation": "函数 VerifySeed：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.VerifySeed.parameters.ctx": {
+      "source": "Parameter ctx of VerifySeed.",
+      "translation": "参数 ctx：为 VerifySeed 提供所需输入。"
+    },
+    "go.core.functions.VerifySeed.parameters.seed": {
+      "source": "Parameter seed of VerifySeed.",
+      "translation": "参数 seed：为 VerifySeed 提供所需输入。"
+    },
+    "go.core.functions.VerifySeed.parameters.expected": {
+      "source": "Parameter expected of VerifySeed.",
+      "translation": "参数 expected：为 VerifySeed 提供所需输入。"
+    },
+    "go.core.functions.VerifySource": {
+      "source": "VerifySource validates every source block against the raw digests in seed,\nthen checks that neither stream contains extra data.",
+      "translation": "函数 VerifySource：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.VerifySource.parameters.ctx": {
+      "source": "Parameter ctx of VerifySource.",
+      "translation": "参数 ctx：为 VerifySource 提供所需输入。"
+    },
+    "go.core.functions.VerifySource.parameters.source": {
+      "source": "Parameter source of VerifySource.",
+      "translation": "参数 source：为 VerifySource 提供所需输入。"
+    },
+    "go.core.functions.VerifySource.parameters.seed": {
+      "source": "Parameter seed of VerifySource.",
+      "translation": "参数 seed：为 VerifySource 提供所需输入。"
+    },
+    "go.core.functions.ReadBlockHash": {
+      "source": "ReadBlockHash reads one raw digest from a random-access seed file.",
+      "translation": "函数 ReadBlockHash：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.ReadBlockHash.parameters.ctx": {
+      "source": "Parameter ctx of ReadBlockHash.",
+      "translation": "参数 ctx：为 ReadBlockHash 提供所需输入。"
+    },
+    "go.core.functions.ReadBlockHash.parameters.seed": {
+      "source": "Parameter seed of ReadBlockHash.",
+      "translation": "参数 seed：为 ReadBlockHash 提供所需输入。"
+    },
+    "go.core.functions.ReadBlockHash.parameters.seedSize": {
+      "source": "Parameter seedSize of ReadBlockHash.",
+      "translation": "参数 seedSize：为 ReadBlockHash 提供所需输入。"
+    },
+    "go.core.functions.ReadBlockHash.parameters.blockIndex": {
+      "source": "Parameter blockIndex of ReadBlockHash.",
+      "translation": "参数 blockIndex：为 ReadBlockHash 提供所需输入。"
+    },
+    "go.core.functions.VerifyBlock": {
+      "source": "VerifyBlock hashes one caller-provided block. A short block is accepted; an\nAPI caller needs source-length context to decide whether it is the last one.",
+      "translation": "函数 VerifyBlock：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.VerifyBlock.parameters.ctx": {
+      "source": "Parameter ctx of VerifyBlock.",
+      "translation": "参数 ctx：为 VerifyBlock 提供所需输入。"
+    },
+    "go.core.functions.VerifyBlock.parameters.block": {
+      "source": "Parameter block of VerifyBlock.",
+      "translation": "参数 block：为 VerifyBlock 提供所需输入。"
+    },
+    "go.core.functions.VerifyBlock.parameters.expected": {
+      "source": "Parameter expected of VerifyBlock.",
+      "translation": "参数 expected：为 VerifyBlock 提供所需输入。"
+    },
+    "go.core.functions.ExpectedBlockSize": {
+      "source": "ExpectedBlockSize returns the protocol length of a block for a source of\nsourceSize bytes. Empty sources have no valid block indices.",
+      "translation": "函数 ExpectedBlockSize：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.ExpectedBlockSize.parameters.sourceSize": {
+      "source": "Parameter sourceSize of ExpectedBlockSize.",
+      "translation": "参数 sourceSize：为 ExpectedBlockSize 提供所需输入。"
+    },
+    "go.core.functions.ExpectedBlockSize.parameters.blockIndex": {
+      "source": "Parameter blockIndex of ExpectedBlockSize.",
+      "translation": "参数 blockIndex：为 ExpectedBlockSize 提供所需输入。"
+    },
+    "go.core.functions.VerifySeedForSourceSize": {
+      "source": "VerifySeedForSourceSize verifies seed structure, hash, and its digest count\nagainst a caller-provided source size in a single streaming pass.",
+      "translation": "函数 VerifySeedForSourceSize：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.VerifySeedForSourceSize.parameters.ctx": {
+      "source": "Parameter ctx of VerifySeedForSourceSize.",
+      "translation": "参数 ctx：为 VerifySeedForSourceSize 提供所需输入。"
+    },
+    "go.core.functions.VerifySeedForSourceSize.parameters.seed": {
+      "source": "Parameter seed of VerifySeedForSourceSize.",
+      "translation": "参数 seed：为 VerifySeedForSourceSize 提供所需输入。"
+    },
+    "go.core.functions.VerifySeedForSourceSize.parameters.expectedSeedHash": {
+      "source": "Parameter expectedSeedHash of VerifySeedForSourceSize.",
+      "translation": "参数 expectedSeedHash：为 VerifySeedForSourceSize 提供所需输入。"
+    },
+    "go.core.functions.VerifySeedForSourceSize.parameters.sourceSize": {
+      "source": "Parameter sourceSize of VerifySeedForSourceSize.",
+      "translation": "参数 sourceSize：为 VerifySeedForSourceSize 提供所需输入。"
+    },
+    "go.core.types.BlockMatches": {
+      "source": "BlockMatches describes all occurrences of a digest in a trusted seed.",
+      "translation": "类型 BlockMatches：描述 MasterSeed V1 数据结构。"
+    },
+    "go.core.types.BlockMatches.fields.MatchCount": {
+      "source": "Field MatchCount of BlockMatches.",
+      "translation": "字段 MatchCount：BlockMatches 结果中的数据成员。"
+    },
+    "go.core.types.BlockMatches.fields.FirstIndex": {
+      "source": "Field FirstIndex of BlockMatches.",
+      "translation": "字段 FirstIndex：BlockMatches 结果中的数据成员。"
+    },
+    "go.core.types.BlockMatches.fields.LastIndex": {
+      "source": "Field LastIndex of BlockMatches.",
+      "translation": "字段 LastIndex：BlockMatches 结果中的数据成员。"
+    },
+    "go.core.functions.FindBlockHash": {
+      "source": "FindBlockHash scans a trusted seed once and returns the first/last indices\nand total count of an exact 32-byte digest match.",
+      "translation": "函数 FindBlockHash：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.FindBlockHash.parameters.ctx": {
+      "source": "Parameter ctx of FindBlockHash.",
+      "translation": "参数 ctx：为 FindBlockHash 提供所需输入。"
+    },
+    "go.core.functions.FindBlockHash.parameters.seed": {
+      "source": "Parameter seed of FindBlockHash.",
+      "translation": "参数 seed：为 FindBlockHash 提供所需输入。"
+    },
+    "go.core.functions.FindBlockHash.parameters.expectedSeedHash": {
+      "source": "Parameter expectedSeedHash of FindBlockHash.",
+      "translation": "参数 expectedSeedHash：为 FindBlockHash 提供所需输入。"
+    },
+    "go.core.functions.FindBlockHash.parameters.sourceSize": {
+      "source": "Parameter sourceSize of FindBlockHash.",
+      "translation": "参数 sourceSize：为 FindBlockHash 提供所需输入。"
+    },
+    "go.core.functions.FindBlockHash.parameters.blockHash": {
+      "source": "Parameter blockHash of FindBlockHash.",
+      "translation": "参数 blockHash：为 FindBlockHash 提供所需输入。"
+    },
+    "go.core.types.VerifiedBlock": {
+      "source": "VerifiedBlock identifies the first digest occurrence whose protocol block\nlength agrees with the supplied block.",
+      "translation": "类型 VerifiedBlock：描述 MasterSeed V1 数据结构。"
+    },
+    "go.core.types.VerifiedBlock.fields.BlockHash": {
+      "source": "Field BlockHash of VerifiedBlock.",
+      "translation": "字段 BlockHash：VerifiedBlock 结果中的数据成员。"
+    },
+    "go.core.types.VerifiedBlock.fields.BlockIndex": {
+      "source": "Field BlockIndex of VerifiedBlock.",
+      "translation": "字段 BlockIndex：VerifiedBlock 结果中的数据成员。"
+    },
+    "go.core.types.VerifiedBlock.fields.BlockSize": {
+      "source": "Field BlockSize of VerifiedBlock.",
+      "translation": "字段 BlockSize：VerifiedBlock 结果中的数据成员。"
+    },
+    "go.core.functions.VerifyBlockInSeed": {
+      "source": "VerifyBlockInSeed verifies membership and protocol block length in one seed\npass. Seed integrity and source-size binding are checked before membership\nerrors are returned.",
+      "translation": "函数 VerifyBlockInSeed：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.VerifyBlockInSeed.parameters.ctx": {
+      "source": "Parameter ctx of VerifyBlockInSeed.",
+      "translation": "参数 ctx：为 VerifyBlockInSeed 提供所需输入。"
+    },
+    "go.core.functions.VerifyBlockInSeed.parameters.seed": {
+      "source": "Parameter seed of VerifyBlockInSeed.",
+      "translation": "参数 seed：为 VerifyBlockInSeed 提供所需输入。"
+    },
+    "go.core.functions.VerifyBlockInSeed.parameters.expectedSeedHash": {
+      "source": "Parameter expectedSeedHash of VerifyBlockInSeed.",
+      "translation": "参数 expectedSeedHash：为 VerifyBlockInSeed 提供所需输入。"
+    },
+    "go.core.functions.VerifyBlockInSeed.parameters.sourceSize": {
+      "source": "Parameter sourceSize of VerifyBlockInSeed.",
+      "translation": "参数 sourceSize：为 VerifyBlockInSeed 提供所需输入。"
+    },
+    "go.core.functions.VerifyBlockInSeed.parameters.block": {
+      "source": "Parameter block of VerifyBlockInSeed.",
+      "translation": "参数 block：为 VerifyBlockInSeed 提供所需输入。"
+    },
+    "go.core.constants.Format": {
+      "source": "V1 constants are part of the wire format and must not change within V1.",
+      "translation": "常量 Format：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.BlockSize": {
+      "source": "V1 constants are part of the wire format and must not change within V1.",
+      "translation": "常量 BlockSize：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.DigestSize": {
+      "source": "V1 constants are part of the wire format and must not change within V1.",
+      "translation": "常量 DigestSize：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.HashAlgorithm": {
+      "source": "V1 constants are part of the wire format and must not change within V1.",
+      "translation": "常量 HashAlgorithm：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.FORMAT": {
+      "source": "Upper-case aliases mirror the protocol notation used in the public spec.",
+      "translation": "常量 FORMAT：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.BLOCK_SIZE": {
+      "source": "V1 constants are part of the wire format and must not change within V1.",
+      "translation": "常量 BLOCK_SIZE：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.DIGEST_SIZE": {
+      "source": "V1 constants are part of the wire format and must not change within V1.",
+      "translation": "常量 DIGEST_SIZE：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.HASH_ALGORITHM": {
+      "source": "V1 constants are part of the wire format and must not change within V1.",
+      "translation": "常量 HASH_ALGORITHM：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.types.Digest": {
+      "source": "Digest is an immutable, fixed-size SHA-256 digest value.",
+      "translation": "类型 Digest：描述 MasterSeed V1 数据结构。"
+    },
+    "go.core.types.Digest.methods.Bytes": {
+      "source": "Bytes returns a copy of the raw 32-byte digest.",
+      "translation": "方法 Bytes：Digest 实例提供的操作。"
+    },
+    "go.core.types.Digest.methods.Hex": {
+      "source": "Hex returns the canonical lower-case hexadecimal representation.",
+      "translation": "方法 Hex：Digest 实例提供的操作。"
+    },
+    "go.core.types.Digest.methods.String": {
+      "source": "String implements fmt.Stringer using the canonical hexadecimal form.",
+      "translation": "方法 String：Digest 实例提供的操作。"
+    },
+    "go.core.types.Digest.methods.Equal": {
+      "source": "Equal compares two digest values.",
+      "translation": "方法 Equal：Digest 实例提供的操作。"
+    },
+    "go.core.functions.DigestFromBytes": {
+      "source": "DigestFromBytes constructs a Digest only from exactly 32 bytes.",
+      "translation": "函数 DigestFromBytes：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.DigestFromBytes.parameters.value": {
+      "source": "Parameter value of DigestFromBytes.",
+      "translation": "参数 value：为 DigestFromBytes 提供所需输入。"
+    },
+    "go.core.functions.ParseDigestHex": {
+      "source": "ParseDigestHex parses exactly 64 hexadecimal characters. Whitespace and 0x\nprefixes are intentionally not accepted.",
+      "translation": "函数 ParseDigestHex：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.ParseDigestHex.parameters.value": {
+      "source": "Parameter value of ParseDigestHex.",
+      "translation": "参数 value：为 ParseDigestHex 提供所需输入。"
+    },
+    "go.core.functions.DigestFromHex": {
+      "source": "DigestFromHex is an alias for ParseDigestHex.",
+      "translation": "函数 DigestFromHex：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.DigestFromHex.parameters.value": {
+      "source": "Parameter value of DigestFromHex.",
+      "translation": "参数 value：为 DigestFromHex 提供所需输入。"
+    },
+    "go.core.functions.NewDigest": {
+      "source": "NewDigest is an alias for DigestFromBytes for callers that prefer a\nconstructor-style name.",
+      "translation": "函数 NewDigest：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.NewDigest.parameters.value": {
+      "source": "Parameter value of NewDigest.",
+      "translation": "参数 value：为 NewDigest 提供所需输入。"
+    },
+    "go.core.functions.Sum256": {
+      "source": "Sum256 returns the digest of value.",
+      "translation": "函数 Sum256：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.Sum256.parameters.value": {
+      "source": "Parameter value of Sum256.",
+      "translation": "参数 value：为 Sum256 提供所需输入。"
+    },
+    "go.core.types.ErrorCode": {
+      "source": "ErrorCode is stable across the Go and TypeScript SDKs.",
+      "translation": "类型 ErrorCode：描述 MasterSeed V1 数据结构。"
+    },
+    "go.core.constants.InvalidSeedLength": {
+      "source": "InvalidSeedLength is a public MasterSeed Go SDK constants.",
+      "translation": "常量 InvalidSeedLength：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.InvalidHashEncoding": {
+      "source": "InvalidHashEncoding is a public MasterSeed Go SDK constants.",
+      "translation": "常量 InvalidHashEncoding：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.SeedHashMismatch": {
+      "source": "SeedHashMismatch is a public MasterSeed Go SDK constants.",
+      "translation": "常量 SeedHashMismatch：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.BlockHashMismatch": {
+      "source": "BlockHashMismatch is a public MasterSeed Go SDK constants.",
+      "translation": "常量 BlockHashMismatch：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.SourceTooShort": {
+      "source": "SourceTooShort is a public MasterSeed Go SDK constants.",
+      "translation": "常量 SourceTooShort：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.SourceTooLong": {
+      "source": "SourceTooLong is a public MasterSeed Go SDK constants.",
+      "translation": "常量 SourceTooLong：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.BlockIndexOutOfRange": {
+      "source": "BlockIndexOutOfRange is a public MasterSeed Go SDK constants.",
+      "translation": "常量 BlockIndexOutOfRange：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.IntegerOverflow": {
+      "source": "IntegerOverflow is a public MasterSeed Go SDK constants.",
+      "translation": "常量 IntegerOverflow：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.TargetExists": {
+      "source": "TargetExists is a public MasterSeed Go SDK constants.",
+      "translation": "常量 TargetExists：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.ReadFailed": {
+      "source": "ReadFailed is a public MasterSeed Go SDK constants.",
+      "translation": "常量 ReadFailed：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.WriteFailed": {
+      "source": "WriteFailed is a public MasterSeed Go SDK constants.",
+      "translation": "常量 WriteFailed：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.Aborted": {
+      "source": "Aborted is a public MasterSeed Go SDK constants.",
+      "translation": "常量 Aborted：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.InvalidArgument": {
+      "source": "InvalidArgument is a public MasterSeed Go SDK constants.",
+      "translation": "常量 InvalidArgument：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.SeedSizeMismatch": {
+      "source": "SeedSizeMismatch is a public MasterSeed Go SDK constants.",
+      "translation": "常量 SeedSizeMismatch：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.BlockNotInSeed": {
+      "source": "BlockNotInSeed is a public MasterSeed Go SDK constants.",
+      "translation": "常量 BlockNotInSeed：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.constants.BlockSizeMismatch": {
+      "source": "BlockSizeMismatch is a public MasterSeed Go SDK constants.",
+      "translation": "常量 BlockSizeMismatch：定义 MasterSeed V1 协议值。"
+    },
+    "go.core.types.Error": {
+      "source": "Error is the structured error returned by the SDK. Context fields are\noptional and are populated only when relevant to the failure.",
+      "translation": "类型 Error：描述 MasterSeed V1 数据结构。"
+    },
+    "go.core.types.Error.fields.Code": {
+      "source": "Field Code of Error.",
+      "translation": "字段 Code：Error 结果中的数据成员。"
+    },
+    "go.core.types.Error.fields.Message": {
+      "source": "Field Message of Error.",
+      "translation": "字段 Message：Error 结果中的数据成员。"
+    },
+    "go.core.types.Error.fields.Cause": {
+      "source": "Field Cause of Error.",
+      "translation": "字段 Cause：Error 结果中的数据成员。"
+    },
+    "go.core.types.Error.fields.Operation": {
+      "source": "Field Operation of Error.",
+      "translation": "字段 Operation：Error 结果中的数据成员。"
+    },
+    "go.core.types.Error.fields.Path": {
+      "source": "Field Path of Error.",
+      "translation": "字段 Path：Error 结果中的数据成员。"
+    },
+    "go.core.types.Error.fields.BlockIndex": {
+      "source": "Field BlockIndex of Error.",
+      "translation": "字段 BlockIndex：Error 结果中的数据成员。"
+    },
+    "go.core.types.Error.fields.BlockCount": {
+      "source": "Field BlockCount of Error.",
+      "translation": "字段 BlockCount：Error 结果中的数据成员。"
+    },
+    "go.core.types.Error.fields.SourceOffset": {
+      "source": "Field SourceOffset of Error.",
+      "translation": "字段 SourceOffset：Error 结果中的数据成员。"
+    },
+    "go.core.types.Error.fields.SeedSize": {
+      "source": "Field SeedSize of Error.",
+      "translation": "字段 SeedSize：Error 结果中的数据成员。"
+    },
+    "go.core.types.Error.fields.ExpectedSeedSize": {
+      "source": "Field ExpectedSeedSize of Error.",
+      "translation": "字段 ExpectedSeedSize：Error 结果中的数据成员。"
+    },
+    "go.core.types.Error.fields.ExpectedBlockCount": {
+      "source": "Field ExpectedBlockCount of Error.",
+      "translation": "字段 ExpectedBlockCount：Error 结果中的数据成员。"
+    },
+    "go.core.types.Error.fields.ActualBlockSize": {
+      "source": "Field ActualBlockSize of Error.",
+      "translation": "字段 ActualBlockSize：Error 结果中的数据成员。"
+    },
+    "go.core.types.Error.fields.Expected": {
+      "source": "Field Expected of Error.",
+      "translation": "字段 Expected：Error 结果中的数据成员。"
+    },
+    "go.core.types.Error.fields.Actual": {
+      "source": "Field Actual of Error.",
+      "translation": "字段 Actual：Error 结果中的数据成员。"
+    },
+    "go.core.types.Error.methods.Error": {
+      "source": "Method Error of Error.",
+      "translation": "方法 Error：Error 实例提供的操作。"
+    },
+    "go.core.types.Error.methods.Unwrap": {
+      "source": "Method Unwrap of Error.",
+      "translation": "方法 Unwrap：Error 实例提供的操作。"
+    },
+    "go.core.functions.CodeOf": {
+      "source": "CodeOf extracts a stable SDK error code through wrapped errors.",
+      "translation": "函数 CodeOf：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.CodeOf.parameters.err": {
+      "source": "Parameter err of CodeOf.",
+      "translation": "参数 err：为 CodeOf 提供所需输入。"
+    },
+    "go.core.functions.IsCode": {
+      "source": "IsCode reports whether err or one of its causes has code.",
+      "translation": "函数 IsCode：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.IsCode.parameters.err": {
+      "source": "Parameter err of IsCode.",
+      "translation": "参数 err：为 IsCode 提供所需输入。"
+    },
+    "go.core.functions.IsCode.parameters.code": {
+      "source": "Parameter code of IsCode.",
+      "translation": "参数 code：为 IsCode 提供所需输入。"
+    },
+    "go.core.types.CreateSeedFileOptions": {
+      "source": "CreateSeedFileOptions controls atomic path publishing.",
+      "translation": "类型 CreateSeedFileOptions：描述 MasterSeed V1 数据结构。"
+    },
+    "go.core.types.CreateSeedFileOptions.fields.Overwrite": {
+      "source": "Field Overwrite of CreateSeedFileOptions.",
+      "translation": "字段 Overwrite：CreateSeedFileOptions 结果中的数据成员。"
+    },
+    "go.core.types.CreateSeedFileOptions.fields.Sync": {
+      "source": "Field Sync of CreateSeedFileOptions.",
+      "translation": "字段 Sync：CreateSeedFileOptions 结果中的数据成员。"
+    },
+    "go.core.functions.CreateSeedFile": {
+      "source": "CreateSeedFile writes a seed beside the target, then publishes it. The\ndefault is no-overwrite; an incomplete seed is never left at seedPath.",
+      "translation": "函数 CreateSeedFile：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.CreateSeedFile.parameters.ctx": {
+      "source": "Parameter ctx of CreateSeedFile.",
+      "translation": "参数 ctx：为 CreateSeedFile 提供所需输入。"
+    },
+    "go.core.functions.CreateSeedFile.parameters.sourcePath": {
+      "source": "Parameter sourcePath of CreateSeedFile.",
+      "translation": "参数 sourcePath：为 CreateSeedFile 提供所需输入。"
+    },
+    "go.core.functions.CreateSeedFile.parameters.seedPath": {
+      "source": "Parameter seedPath of CreateSeedFile.",
+      "translation": "参数 seedPath：为 CreateSeedFile 提供所需输入。"
+    },
+    "go.core.functions.CreateSeedFile.parameters.options": {
+      "source": "Parameter options of CreateSeedFile.",
+      "translation": "参数 options：为 CreateSeedFile 提供所需输入。"
+    },
+    "go.core.functions.VerifySourceFile": {
+      "source": "VerifySourceFile verifies the seed hash before reopening the seed for the\ncomplete source pass, so untrusted seed contents are not used unchecked.",
+      "translation": "函数 VerifySourceFile：处理 MasterSeed V1 数据种子。"
+    },
+    "go.core.functions.VerifySourceFile.parameters.ctx": {
+      "source": "Parameter ctx of VerifySourceFile.",
+      "translation": "参数 ctx：为 VerifySourceFile 提供所需输入。"
+    },
+    "go.core.functions.VerifySourceFile.parameters.sourcePath": {
+      "source": "Parameter sourcePath of VerifySourceFile.",
+      "translation": "参数 sourcePath：为 VerifySourceFile 提供所需输入。"
+    },
+    "go.core.functions.VerifySourceFile.parameters.seedPath": {
+      "source": "Parameter seedPath of VerifySourceFile.",
+      "translation": "参数 seedPath：为 VerifySourceFile 提供所需输入。"
+    },
+    "go.core.functions.VerifySourceFile.parameters.expected": {
+      "source": "Parameter expected of VerifySourceFile.",
+      "translation": "参数 expected：为 VerifySourceFile 提供所需输入。"
+    }
+  },
+  "categories": {
+    "generation": "种子生成",
+    "inspection": "种子检查",
+    "verification": "完整性验证",
+    "blocks": "分块摘要",
+    "files": "文件适配"
+  },
+  "operations": {
+    "create-seed": {
+      "source": {
+        "title": "Create seed",
+        "purpose": "Hash source blocks into raw digest bytes."
+      },
+      "translation": {
+        "title": "创建种子",
+        "purpose": "按顺序读取源分块并拼接原始摘要字节。"
+      }
+    },
+    "inspect-seed": {
+      "source": {
+        "title": "Inspect or hash seed",
+        "purpose": "Compute seed hash and inspect structural length."
+      },
+      "translation": {
+        "title": "检查或哈希种子",
+        "purpose": "计算 seed hash 并检查摘要流的结构长度。"
+      }
+    },
+    "verify-seed": {
+      "source": {
+        "title": "Verify seed",
+        "purpose": "Authenticate complete seed bytes with expected hash."
+      },
+      "translation": {
+        "title": "验证种子",
+        "purpose": "使用预期哈希验证完整的种子字节。"
+      }
+    },
+    "verify-source-size": {
+      "source": {
+        "title": "Verify with source size",
+        "purpose": "Bind digest count to trusted source size."
+      },
+      "translation": {
+        "title": "按源大小验证",
+        "purpose": "将摘要数量绑定到可信的源大小。"
+      }
+    },
+    "source-verify": {
+      "source": {
+        "title": "Verify complete source",
+        "purpose": "Compare source blocks against the authenticated seed."
+      },
+      "translation": {
+        "title": "验证完整源",
+        "purpose": "将源分块与已认证种子逐块比较。"
+      }
+    },
+    "read-block": {
+      "source": {
+        "title": "Read block hash",
+        "purpose": "Read one digest at a checked index."
+      },
+      "translation": {
+        "title": "读取分块哈希",
+        "purpose": "读取经过索引检查的单个分块摘要。"
+      }
+    },
+    "find-membership": {
+      "source": {
+        "title": "Find digest membership",
+        "purpose": "Scan a trusted seed for matching digests."
+      },
+      "translation": {
+        "title": "查找摘要成员",
+        "purpose": "在可信种子中扫描匹配的分块摘要。"
+      }
+    },
+    "file-helpers": {
+      "source": {
+        "title": "File create and verify",
+        "purpose": "Use path adapters around the streaming core."
+      },
+      "translation": {
+        "title": "文件创建与验证",
+        "purpose": "使用路径适配器调用流式核心操作。"
+      }
+    }
+  }
+}

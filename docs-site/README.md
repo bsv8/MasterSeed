@@ -1,11 +1,11 @@
 # MasterSeed documentation
 
-Unified VitePress documentation for the `masterseed` TypeScript package and the root Go module. Every dev/build generates TypeDoc from `../typescript/src/index.ts` and gomarkdoc v1.1.0 from `github.com/bsv8/MasterSeed`; generated API output is ignored.
+Docusaurus documentation for the TypeScript and Go SDKs. API pages and operation metadata are generated from the current SDK sources before every build.
 
 ```sh
 npm ci
+npm run check
 npm run build
-DOCS_BASE=masterseed npm run build
 ```
 
-`DOCS_BASE` configures subpath deployment. The package is installed with `npm install masterseed`.
+Cloudflare Pages: root directory `docs-site`, build command `npm run build`, output directory `build`.

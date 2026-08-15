@@ -1,0 +1,11 @@
+{
+  "title": {"message": "MasterSeed", "description": "The title in the navbar"},
+  "logo.alt": {"message": "MasterSeed 标志", "description": "The alt text of navbar logo"},
+  "item.label.Guide": {"message": "指南", "description": "Navbar item with label Guide"},
+  "item.label.Operations": {"message": "操作总览", "description": "Navbar item with label Operations"},
+  "item.label.API": {"message": "API", "description": "Navbar dropdown with label API"},
+  "item.label.TypeScript API": {"message": "TypeScript API", "description": "Navbar item with label TypeScript API"},
+  "item.label.Go API": {"message": "Go API", "description": "Navbar item with label Go API"},
+  "item.label.Concepts": {"message": "概念", "description": "Navbar item with label Concepts"},
+  "item.label.GitHub": {"message": "GitHub", "description": "Navbar item with label GitHub"}
+}

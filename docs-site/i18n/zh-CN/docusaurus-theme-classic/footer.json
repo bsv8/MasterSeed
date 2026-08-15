@@ -1,0 +1,10 @@
+{
+  "link.title.Explore": {"message": "探索", "description": "The title of the footer links column with title=Explore in the footer"},
+  "link.title.API": {"message": "API", "description": "The title of the footer links column with title=API in the footer"},
+  "link.item.label.Getting started": {"message": "快速开始", "description": "The label of footer link with label=Getting started"},
+  "link.item.label.Operations": {"message": "操作总览", "description": "The label of footer link with label=Operations"},
+  "link.item.label.Release notes": {"message": "发布说明", "description": "The label of footer link with label=Release notes"},
+  "link.item.label.TypeScript": {"message": "TypeScript", "description": "The label of footer link with label=TypeScript"},
+  "link.item.label.Go": {"message": "Go", "description": "The label of footer link with label=Go"},
+  "copyright": {"message": "Copyright © 2026 MasterSeed contributors.", "description": "The footer copyright"}
+}

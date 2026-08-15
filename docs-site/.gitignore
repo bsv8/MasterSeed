@@ -1,5 +1,7 @@
 node_modules/
-site/api/
-site/.vitepress/dist/
-site/.vitepress/cache/
-site/.vitepress/.temp/
+build/
+.docusaurus/
+.api-metadata/
+docs/api/
+i18n/zh-CN/docusaurus-plugin-content-docs/current/api/
+src/data/operations.generated.json
